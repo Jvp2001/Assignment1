@@ -1,0 +1,12 @@
+* {
+    color: black;
+    -unity-text-align: middle-center;
+}
+
+Button:hover {
+    background-color: rgb(84, 83, 83);
+}
+
+Button:active {
+    background-color: rgb(47, 47, 47);
+}

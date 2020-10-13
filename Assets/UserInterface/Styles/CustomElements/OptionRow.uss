@@ -1,0 +1,11 @@
+.OptionsRow {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.OptionsRow .OptionName {
+    -unity-text-align: middle-left;
+    font-size: 22px;
+}

@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Assignment1.UserInterface.Components.VerticalBoxElement name="Root">
+        <Style src="/Assets/UserInterface/Styles/MenuStyles/VideoOptionsMenuStyles.uss" />
+        <Style src="/Assets/UserInterface/Styles/CustomElements/OptionRow.uss" />
+        <ui:Label text="Video Options" name="Title" />
+        <ui:VisualElement name="ButtonsContainer" style="height: 100%; width: 80%; max-width: 100%;">
+            <ui:VisualElement class="OptionsRow NewOptionsRow" style="min-width: 100%; height: 107px; width: 297px; flex-direction: row; justify-content: space-between; padding-right: 0; min-height: initial;">
+                <ui:Label text="Difficulty" class="OptionName" style="justify-content: space-between; padding-right: 5px;" />
+                <ui:ScrollView name="Resolution" style="width: 100%; min-width: 60%; background-color: rgba(45, 45, 45, 0.69); min-height: 10%; max-width: 80%; height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="OptionsRow" style="min-width: 100%; height: 37px; width: 306px; max-width: none;">
+                <ui:Button text="Apply" name="Apply" style="flex-direction: row; flex-wrap: wrap; width: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="OptionsRow" style="min-width: 100%; height: 37px; width: 306px;">
+                <ui:Button text="Back" name="Back" style="flex-direction: row; flex-wrap: wrap; width: 100%; align-items: center; min-width: auto;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </Assignment1.UserInterface.Components.VerticalBoxElement>
+</ui:UXML>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\mirro\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\mirro\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Assignment1.-989634900.00" t="ExcludeRecursive" />
+    <e p="C:\Users\mirro\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\mirro\Documents\Unity Projects\University\Engine Scripting\Assignments\Assignment1\Assignment1" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="Utilities" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="RequiredInterfaceAttribute.cs" t="Include" />
+            </e>
+            <e p="Drawers" t="Include">
+              <e p="ExtendedScritableObjectDrawer.cs" t="Include" />
+              <e p="RequiredInterfaceAttributeDrawer.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="InteractionSystem" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="InteractableComponent.cs" t="Include" />
+            <e p="InteractionComponent.cs" t="Include" />
+          </e>
+          <e p="UserInterface" t="Include">
+            <e p="InteractionUI.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="UserInterface" t="Include">
+            <e p="Styles" t="Include">
+              <e p="CustomElements" t="Include">
+                <e p="OptionRow.uss" t="Include" />
+                <e p="VerticalBox.uss" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Animations" t="Include">
+            <e p="AnimationTrigger.cs" t="Include" />
+            <e p="CupboardTweenSequencer.cs" t="Include" />
+            <e p="TweenDatum.cs" t="Include" />
+            <e p="TweenSequencer.cs" t="Include" />
+            <e p="TweenSequencerDatum.cs" t="Include" />
+            <e p="TweenType.cs" t="Include" />
+          </e>
+          <e p="AssignmentOneInputActions.cs" t="Include" />
+          <e p="FirstPersonCharacter" t="Include">
+            <e p="FirstPersonCameraController.cs" t="Include" />
+            <e p="FirstPersonCharacterController.cs" t="Include" />
+          </e>
+          <e p="Gameplay" t="Include">
+            <e p="Difficulty.cs" t="Include" />
+            <e p="GameplayManager.cs" t="Include" />
+            <e p="GameplaySettings.cs" t="Include" />
+          </e>
+          <e p="Logger.cs" t="Include" />
+          <e p="Singleton.cs" t="Include" />
+          <e p="UserInterface" t="Include">
+            <e p="Controllers" t="Include">
+              <e p="GameplaySettingsMenuController.cs" t="Include" />
+              <e p="MainMenuController.cs" t="Include" />
+              <e p="MenuController.cs" t="Include" />
+              <e p="OptionsMenuController.cs" t="Include" />
+              <e p="SettingsMenuController.cs" t="Include" />
+              <e p="VideoSettingsMenuController.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="UserInterface" t="Include">
+          <e p="Elements" t="Include">
+            <e p="VerticalBox.cs" t="Include" />
+          </e>
+          <e p="Layouts" t="Include">
+            <e p="Menus" t="Include">
+              <e p="GameplayOptionsMenu.uxml" t="Include" />
+              <e p="MainMenu.uxml" t="Include" />
+              <e p="OptionsMenu.uxml" t="Include" />
+              <e p="VideoOptionsMenu.uxml" t="Include" />
+            </e>
+          </e>
+          <e p="Styles" t="Include">
+            <e p="CustomElements" t="Include">
+              <e p="OptionRow.uss" t="Include" />
+              <e p="VerticalBox.uss" t="Include" />
+            </e>
+            <e p="MenuStyles" t="Include">
+              <e p="MainMenuStyles.uss" t="Include" />
+              <e p="MenuStyles.uss" t="Include" />
+              <e p="OptionMenuStyles.uss" t="Include" />
+              <e p="VideoOptionsMenuStyles.uss" t="Include" />
+            </e>
+          </e>
+          <e p="VideoOptionsMenu 1.uxml" t="Include" />
+        </e>
+        <e p="Utilities" t="Include">
+          <e p="Attributes" t="Include">
+            <e p="ButtonAttribute.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Assignment1.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

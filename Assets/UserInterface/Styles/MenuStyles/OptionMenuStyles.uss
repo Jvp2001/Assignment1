@@ -1,0 +1,24 @@
+#Root {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#Root #Title {
+    font-size: 48px;
+    -unity-text-align: middle-center;
+    padding-bottom: 5%;
+}
+
+#Root #ButtonsContainer {
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 40%;
+    min-height: 30%;
+}
+
+#Root #ButtonsContainer > .MenuButton {
+    font-size: 36px;
+    min-width: 183px;
+}
