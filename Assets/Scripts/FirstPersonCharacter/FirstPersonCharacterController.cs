@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Assignment1.Gameplay;
 using InteractionSystem;
 using UnityEngine;
 using Logger = Assignment1.Logger;
@@ -23,116 +24,117 @@ using UnityEngine.Serialization;
 /// </para>
 /// </remarks>
 [RequireComponent(typeof(CharacterController))]
-public class FirstPersonCharacterController : MonoBehaviour {
+public class FirstPersonCharacterController : MonoBehaviour
+{
+    private float movementX;
+    private float movementY;
+
+    private CharacterController characterController;
+
+    private bool canJump = false;
+
+    private Vector3 velocity;
+
+    [Header("Physics")] [SerializeField] private float gravity = -9.81f;
+
+    /// <summary>
+    /// <para>
+    /// The distance (radius of the sphere) to the ground.
+    /// </para>
+    /// </summary>
+    [FormerlySerializedAs("groundCheckRadius")]
+    [SerializeField]
+    [Tooltip(
+        "The distance (radius of the sphere) to the ground. The higher the value means the greater the distance you will counted as being on the ground.")]
+    private float groundCheckDistance = 0.4f;
+
+    /// <summary>
+    /// <para>
+    /// The layer (tag) that is used to represent the ground.
+    /// </para>
+    /// </summary>
+    [SerializeField]
+    [Tooltip("The layer that is used to represent the ground.")]
+    private LayerMask groundMask;
+
+    /// <summary>
+    /// <para>
+    /// The Ground Check GameObject's transform is used to draw the Sphere which will check if the character is on the ground.
+    /// </para>
+    /// </summary>
+    [SerializeField]
+    [Tooltip(
+        "The Ground Check GameObject's transform is used to draw the Sphere which will check if the character is on the ground.")]
+    private Transform groundCheck = new RectTransform();
 
 
-	private float movementX;
-	private float movementY;
+    [SerializeField] [Header("Movement")] private float movementSpeed = 10f;
 
-	private CharacterController characterController;
+    [SerializeField] private float jumpHeight = 5f;
 
-	private bool hasJumped = false;
+    private InteractionComponent interactionComponent;
 
-	private Vector3 velocity;
+    public InteractionComponent InteractionComponent => interactionComponent;
 
-	[Header("Physics")]
-	[SerializeField]
-	private float gravity = -9.81f;
+    public Vector3 Velocity => velocity;
 
-	/// <summary>
-	/// <para>
-	/// The distance (radius of the sphere) to the ground.
-	/// </para>
-	/// </summary>
-	[FormerlySerializedAs("groundCheckRadius")]
-	[SerializeField]
-	[Tooltip(
-		"The distance (radius of the sphere) to the ground. The higher the value means the greater the distance you will counted as being on the ground.")]
-	private float groundCheckDistance = 0.4f;
+    public bool IsGrounded => Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
 
-	/// <summary>
-	/// <para>
-	/// The layer (tag) that is used to represent the ground.
-	/// </para>
-	/// </summary>
-	[FormerlySerializedAs("layerMask")]
-	[SerializeField]
-	[Tooltip("The layer (tag) that is used to represent the ground.")]
-	private LayerMask groundMask = new LayerMask();
+    public bool CanJump => canJump;
 
-	/// <summary>
-	/// <para>
-	/// The Ground Check GameObject's transform is used to draw the Sphere which will check if the character is on the ground.
-	/// </para>
-	/// </summary>
-	[SerializeField]
-	[Tooltip(
-		"The Ground Check GameObject's transform is used to draw the Sphere which will check if the character is on the ground.")]
-	private Transform groundCheck = new RectTransform();
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+        interactionComponent = GetComponent<InteractionComponent>();
+        Logger.Log(GameplayManager.Instance.GameplaySettings.Difficulty.ToString());
+    }
 
 
-	[SerializeField]
-	[Header("Movement")]
-	private float movementSpeed = 10f;
+    private void Update()
+    {
+        MoveCharacter();
+    }
 
-	[SerializeField]
-	private float jumpHeight = 5f;
+    private void FixedUpdate()
+    {
+        UpdatePhysics();
+    }
 
-	private InteractionComponent interactionComponent;
+    void UpdatePhysics()
+    {
+        if (IsGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+            canJump = true;
+        }
 
-	public InteractionComponent InteractionComponent => interactionComponent;
+        velocity.y += gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
+    }
 
-	public bool HasJumped => hasJumped;
-	public Vector3 Velocity => velocity;
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        Vector2 inputValue = context.ReadValue<Vector2>();
+        movementX = inputValue.x;
+        movementY = inputValue.y;
+    }
 
-	public bool IsGrounded => Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
+    public void OnJump(InputAction.CallbackContext context)
+    {
+         if (CanJump)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Logger.Log("Jumped!");
+            canJump = false;
+        }
+    }
 
-	public bool CanJump => IsGrounded && !HasJumped;
 
-
-	private void Awake() {
-		characterController = GetComponent<CharacterController>();
-		groundMask = LayerMask.NameToLayer("Ground");
-	}
-
-	private void Start() {
-		interactionComponent = GetComponent<InteractionComponent>();
-	}
-	
-
-	private void FixedUpdate() {
-		MoveCharacter();
-		UpdatePhysics();
-	}
-
-	void UpdatePhysics() {
-		if (IsGrounded && velocity.y < 0) {
-			velocity.y = -2f;
-		}
-
-		velocity.y += gravity * Time.deltaTime;
-		characterController.Move(velocity * Time.deltaTime);
-	}
-
-	public void OnMove(InputAction.CallbackContext context) {
-		Vector2 inputValue = context.ReadValue<Vector2>();
-		movementX = inputValue.x;
-		movementY = inputValue.y;
-	}
-
-	public void OnJump(InputAction.CallbackContext context) {
-		if (CanJump) {
-			velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-			Logger.Log("Jumped!");
-		}
-	}
-	
-	
-
-	private void MoveCharacter() {
-		Transform currentTransform = transform;
-		Vector3 movement = currentTransform.right * movementX + currentTransform.forward * movementY;
-		Logger.Log($"Movement: {movement}");
-		characterController.Move(movement * movementSpeed * Time.deltaTime);
-	}
+    private void MoveCharacter()
+    {
+        Transform currentTransform = transform;
+        Vector3 movement = currentTransform.right * movementX + currentTransform.forward * movementY;
+        Logger.Log($"Movement: {movement}");
+        characterController.Move(movement * movementSpeed * Time.deltaTime);
+    }
 }

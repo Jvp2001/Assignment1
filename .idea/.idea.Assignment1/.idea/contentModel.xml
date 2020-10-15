@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\mirro\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\mirro\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Assignment1.-989634900.00" t="ExcludeRecursive" />
-    <e p="C:\Users\mirro\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\mirro\Documents\Unity Projects\University\Engine Scripting\Assignments\Assignment1\Assignment1" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -52,6 +49,7 @@
                 <e p="OptionRow.uss" t="Include" />
                 <e p="VerticalBox.uss" t="Include" />
               </e>
+              <e p="PlayerHUD.uss" t="Include" />
             </e>
           </e>
         </e>
@@ -69,10 +67,14 @@
             <e p="FirstPersonCameraController.cs" t="Include" />
             <e p="FirstPersonCharacterController.cs" t="Include" />
           </e>
+          <e p="GameManager.cs" t="Include" />
           <e p="Gameplay" t="Include">
+            <e p="CountdownTimer.cs" t="Include" />
             <e p="Difficulty.cs" t="Include" />
             <e p="GameplayManager.cs" t="Include" />
             <e p="GameplaySettings.cs" t="Include" />
+            <e p="PlayerData.cs" t="Include" />
+            <e p="TimerOptions.cs" t="Include" />
           </e>
           <e p="Logger.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
@@ -85,6 +87,9 @@
               <e p="SettingsMenuController.cs" t="Include" />
               <e p="VideoSettingsMenuController.cs" t="Include" />
             </e>
+            <e p="Game" t="Include">
+              <e p="PlayerHUD.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="UserInterface" t="Include">
@@ -96,8 +101,10 @@
               <e p="GameplayOptionsMenu.uxml" t="Include" />
               <e p="MainMenu.uxml" t="Include" />
               <e p="OptionsMenu.uxml" t="Include" />
+              <e p="VideoOptionsMenu 1.uxml" t="Include" />
               <e p="VideoOptionsMenu.uxml" t="Include" />
             </e>
+            <e p="PlayerHUD.uxml" t="Include" />
           </e>
           <e p="Styles" t="Include">
             <e p="CustomElements" t="Include">
@@ -111,7 +118,6 @@
               <e p="VideoOptionsMenuStyles.uss" t="Include" />
             </e>
           </e>
-          <e p="VideoOptionsMenu 1.uxml" t="Include" />
         </e>
         <e p="Utilities" t="Include">
           <e p="Attributes" t="Include">
@@ -122,7 +128,9 @@
       <e p="Assignment1.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Assignment1.-467758148.00" t="ExcludeRecursive" />
   </component>
 </project>

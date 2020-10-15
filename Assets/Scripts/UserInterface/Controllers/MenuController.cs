@@ -9,14 +9,15 @@ using Cursor = UnityEngine.Cursor;
 namespace Assignment1.UserInterface {
 	/// <summary>
 	/// <para>
-	/// Base class for all my menu controllers
+	/// Base class for all of my menu controllers
 	/// </para>
 	/// </summary>
 	[RequireComponent(typeof(PanelRenderer))]
+	
 	public abstract class MenuController : MonoBehaviour {
 
 		/// <summary>
-		/// This property is used for the child class (<see cref="this"/> to tell this class that it wants to handle when
+		/// This property can be overriden by a child class to tell the <see cref="MenuController"/> parent class that it wants to handle when
 		/// buttons get setup.
 		/// <remarks>
 		/// Normally not overriden in base child classes
@@ -27,6 +28,7 @@ namespace Assignment1.UserInterface {
 		/// <summary>
 		/// This property will get <see cref="Unity.UIElements.Runtime.PanelRenderer"/> component from its game object 
 		/// </summary>
+		/// 
 		protected PanelRenderer PanelRenderer => GetComponent<PanelRenderer>();
 
 		/// <summary>

@@ -13,7 +13,7 @@ namespace Assignment1.UserInterface.Controllers {
 		protected override Dictionary<string, Action<Button>> ButtonActions =>
 			new Dictionary<string, Action<Button>> {
 				{
-					"play", button => SceneManager.LoadScene("Scenes/SampleScene")
+					"play", button => SceneManager.LoadScene("Scenes/MainLevel")
 				}, {
 					"options", Options
 				},
