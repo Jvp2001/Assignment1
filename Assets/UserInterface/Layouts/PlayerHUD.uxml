@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement style="min-width: 100%; min-height: 100%;">
+        <Style src="/Assets/Resources/UserInterface/Styles/PlayerHUD.uss" />
+        <ui:VisualElement name="VisualElement" style="flex-direction: row; justify-content: space-between; padding-top: 10%; align-items: center;">
+            <ui:VisualElement name="VisualElement" style="padding-left: 0; margin-left: 0; left: 15%; flex-direction: row; min-width: 25%; align-items: auto; justify-content: flex-start; height: 140px; width: 560px; flex-shrink: 0;">
+                <ui:VisualElement style="white-space: normal; height: 100%; width: 40%; background-image: url(&apos;/Assets/BigFurniturePack/Textures/cloth_1.jpg&apos;);" />
+                <ui:Label text="0" name="AmountCollected" style="flex-direction: row-reverse; justify-content: flex-end; align-items: center; flex-grow: 0; position: relative; top: 1.333333px; height: 100%; -unity-text-align: middle-center; padding-left: 5%; flex-wrap: wrap; left: 5%;" />
+            </ui:VisualElement>
+            <ui:Label text="Label" name="Timer" style="flex-direction: row; justify-content: space-between; padding-right: 0; padding-left: 0; margin-right: 0; right: 20%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
