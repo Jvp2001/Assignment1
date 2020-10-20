@@ -1,3 +1,5 @@
+// © 2020 Joshua Petersen. All rights reserved.
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +8,11 @@ namespace Assignment1
     public class GameManager : Singleton<GameManager>
     {
         private static GameObject singletonsGameObject = null;
-        //
-        // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+
+        // /// <summary>
+        // /// Auto instantiates the singletons prefab in the level, instead of just creating one  <see cref="GameObject"/> per <see cref="Singleton{T}"/> when we first use the singleton.
+        // /// </summary>
+        // [RuntimeInitializeOnLoadMethod]
         // private static void OnLoad()
         // {
         //     if (!singletonsGameObject)
@@ -24,7 +29,6 @@ namespace Assignment1
         //             singletonsGameObject.transform.Find("PlayHUD").gameObject.SetActive(true);
         //         }
         //     };
-        //
-        // }
+        //}
     }
 }

@@ -1,3 +1,4 @@
+// © 2020 Joshua Petersen. All rights reserved.
 using System;
 using System.Collections;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UserInterface.Game;
 
 namespace Assignment1.Gameplay
 {
@@ -38,6 +40,7 @@ namespace Assignment1.Gameplay
             {
                 if (scene.name == "MainLevel")
                 {
+                    Logger.Log(PlayerHUD.Instance);
                     timer.Paused = false;
                 }
             };

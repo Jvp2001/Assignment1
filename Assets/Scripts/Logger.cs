@@ -1,16 +1,26 @@
+// © 2020 Joshua Petersen. All rights reserved.
 using System.Reflection;
 using UnityEngine;
 
-/// <remarks>Only works when in <b>debug</b> and in <b>Unity Editor</b>.</remarks>
-/// <summary>
-/// 
-/// A logger that wraps Unity's internal logger.
-/// Calls to its methods are stripped in case the LOGGER_SYMBOL is not defined.
-/// Stops the need for using preprocessor statements when every I want to output to the console.
-/// </summary>
-/// <see cref="https://forum.unity.com/threads/strip-release-build-from-all-debug-log-calls.353600/?_ga=2.177561125.185472191.1600770389-724911382.1591691267"/>
 namespace Assignment1 {
-internal static class Logger {
+	/// <summary>
+	/// 
+	/// A logger class which wraps around Unity's <see cref="UnityEngine.Debug"/> class.
+	/// Calls to its methods are stripped in case the LOGGER_SYMBOL is not defined.
+	/// </summary>
+	/// <remarks>
+	/// Stops the need for preprocessor statements around every Log function call, see example below.
+	/// </remarks>
+	/// <example>
+	///     #if UNITY_EDITOR && DEBUG
+	///         UnityEngine.Debug.Log("This is an example");
+	///    #endif
+	/// 
+	/// //My Logger class
+	/// Assignment1.Logger.Log("This is an example);
+	/// </example> 
+	/// Script is from  <a cref="https://forum.unity.com/threads/strip-release-build-from-all-debug-log-calls.353600/?_ga=2.177561125.185472191.1600770389-724911382.1591691267">here</a>
+	internal static class Logger {
 	/// <summary>
 	/// The name of the symbol that has been defined at the top of this file.
 	///  

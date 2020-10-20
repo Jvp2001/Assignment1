@@ -1,3 +1,4 @@
+// © 2020 Joshua Petersen. All rights reserved.
 
 
 using System;
@@ -24,11 +25,7 @@ namespace Assignment1
         private static object lockedObject = new object();
         private static T instance;
 
-        private void OnEnable()
-        {
-            
-        }
-
+        public bool AutoInstantiate { get; protected set; } = true;
         /// <summary>
         /// Access singleton instance through this property.
         /// </summary>
@@ -43,31 +40,43 @@ namespace Assignment1
                     return null;
                 }
 
-                lock (lockedObject)
+                return CreateInstance();
+            }
+        }
+        
+        private static T CreateInstance()
+        {
+            lock (lockedObject)
+            {
+                if (instance is null)
                 {
-                    if (!instance)
+                    // Search for existing instance.
+                    instance = (T) FindObjectOfType(typeof(T));
+
+                    // Create new instance if one doesn't already exist.
+                    if (instance is null)
                     {
-                        // Search for existing instance.
-                        instance = (T) FindObjectOfType(typeof(T));
-
-                        // Create new instance if one doesn't already exist.
-                        if (instance == null)
-                        {
-                            // Need to create a new GameObject to attach the singleton to.
-                            var singletonObject = new GameObject();
-                            instance = singletonObject.AddComponent<T>();
-                            singletonObject.name = typeof(T) + " (Singleton)";
-                        }
+                        // Need to create a new GameObject to attach the singleton to.
+                        var singletonObject = new GameObject();
+                        instance = singletonObject.AddComponent<T>();
+                        singletonObject.name = typeof(T) + " (Singleton)";
+                        // Make instance persistent.
+                        DontDestroyOnLoad(instance);
                     }
-
-                    // Make instance persistent.
-                    DontDestroyOnLoad(instance);
-
-                    return instance;
                 }
+
+
+                return instance;
             }
         }
 
+        private void OnEnable()
+        {
+            if (AutoInstantiate)
+            {
+                CreateInstance();
+            }
+        }
 
         private void OnApplicationQuit()
         {

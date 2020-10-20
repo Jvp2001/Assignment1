@@ -1,9 +1,10 @@
-﻿using System;
+// © 2020 Joshua Petersen. All rights reserved.
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Logger = Assignment1.Logger;
 
-namespace FirstPersonCharacter {
+namespace Assignment1.FirstPersonCharacter {
 	[RequireComponent(typeof(Camera))]
 	[RequireComponent(typeof(PlayerInput))]
 	public class FirstPersonCameraController : MonoBehaviour {
@@ -30,18 +31,10 @@ namespace FirstPersonCharacter {
 			Application.targetFrameRate = 60;
 		}
 
-
-		// Start is called before the first frame update
-		void Start() {
-		}
-
-		private protected void Some() {
-			
-		}
+		
 		private void Update() {
 			xRotation -= mouseY;
 			yRotation += mouseX;
-//			Logger.Log($"Camera Pos: ({mouseX}, {mouseY})");
 
 			xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 			

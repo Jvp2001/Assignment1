@@ -26,6 +26,11 @@
             <e p="InteractionUI.cs" t="Include" />
           </e>
         </e>
+        <e p="Models" t="Include">
+          <e p="cgtrader" t="Include">
+            <e p="Gem.obj.txt" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -62,7 +67,6 @@
             <e p="TweenSequencerDatum.cs" t="Include" />
             <e p="TweenType.cs" t="Include" />
           </e>
-          <e p="AssignmentOneInputActions.cs" t="Include" />
           <e p="FirstPersonCharacter" t="Include">
             <e p="FirstPersonCameraController.cs" t="Include" />
             <e p="FirstPersonCharacterController.cs" t="Include" />
@@ -77,6 +81,9 @@
             <e p="TimerOptions.cs" t="Include" />
           </e>
           <e p="Logger.cs" t="Include" />
+          <e p="Pickups" t="Include">
+            <e p="Gem.cs" t="Include" />
+          </e>
           <e p="Singleton.cs" t="Include" />
           <e p="UserInterface" t="Include">
             <e p="Controllers" t="Include">

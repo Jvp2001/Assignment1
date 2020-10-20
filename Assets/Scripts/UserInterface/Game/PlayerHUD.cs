@@ -3,42 +3,46 @@
 /// <copyright> © 2020 Joshua Petersen. All rights reserved. </copyright>
 /// </file>
 
- using System;
-using System.Collections;
-using System.Collections.Generic;
 using Assignment1;
 using Assignment1.Gameplay;
-using DG.Tweening;
-using Gameplay;
 using Unity.UIElements.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(PanelRenderer))]
-public class PlayerHUD : Singleton<PlayerHUD>
+namespace UserInterface.Game
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// I violated the naming convention due to HUD being an acronym.
+    /// </remarks>
+    [RequireComponent(typeof(PanelRenderer))]
+    public class PlayerHUD : Singleton<PlayerHUD>
+    {
     
-    private PanelRenderer panelRenderer;
+        private PanelRenderer panelRenderer;
 
-    private Label amountCollected;
+        private Label amountCollected;
 
-    private Label timerLabel;
+        private Label timerLabel;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+            panelRenderer = GetComponent<PanelRenderer>();
+            amountCollected = panelRenderer.visualTree.Query<Label>(name: "AmountCollected");
+            timerLabel = panelRenderer.visualTree.Query<Label>(name: "Timer");
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            panelRenderer.visualTree.MarkDirtyRepaint();
         
-        panelRenderer = GetComponent<PanelRenderer>();
-        amountCollected = panelRenderer.visualTree.Query<Label>(name: "AmountCollected");
-        timerLabel = panelRenderer.visualTree.Query<Label>(name: "Timer");
-    }
+            timerLabel.text = GameplayManager.Instance.Timer.ToString();
 
-    // Update is called once per frame
-    void Update()
-    {
-        panelRenderer.visualTree.MarkDirtyRepaint();
-        
-        timerLabel.text = GameplayManager.Instance.Timer.ToString();
-
+        }
     }
 }

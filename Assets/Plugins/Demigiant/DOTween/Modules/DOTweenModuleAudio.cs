@@ -1,3 +1,4 @@
+// © 2020 Joshua Petersen. All rights reserved.
 // Author: Daniele Giardini - http://www.demigiant.com
 // Created: 2018/07/13
 

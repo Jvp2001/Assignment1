@@ -1,3 +1,4 @@
+// © 2020 Joshua Petersen. All rights reserved.
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;

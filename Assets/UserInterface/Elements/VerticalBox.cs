@@ -1,3 +1,4 @@
+// © 2020 Joshua Petersen. All rights reserved.
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
 

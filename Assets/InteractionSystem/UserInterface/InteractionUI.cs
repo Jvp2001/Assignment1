@@ -1,4 +1,5 @@
-﻿using Assignment1;
+// © 2020 Joshua Petersen. All rights reserved.
+ using Assignment1;
 using UnityEngine;
 using UnityEngine.UI;
 
