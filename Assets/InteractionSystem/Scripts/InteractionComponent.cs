@@ -1,28 +1,34 @@
 // © 2020 Joshua Petersen. All rights reserved.
-﻿using System;
+ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
-using UserInterface.Game.Interaction;
+ using UnityEngine.Serialization;
+ using UserInterface.Game.Interaction;
 using Logger = Assignment1.Logger;
 
 namespace InteractionSystem {
 
 	public class InteractionComponent : MonoBehaviour {
 
-
-		private const float InteractLength = 50.0f;
+		[SerializeField]
+		private float interactLength = 50.0f;
 
 		private RaycastHit hitResult;
 
 		private InteractableComponent interactableComponent;
 		private Camera mainCamera;
 		private InteractionUI interactionUI;
+		private Vector2 mousePosition = Vector2.zero;
+		private Transform parantTransform;
+
+		private Vector3 MousePositionInWorld => mainCamera.ScreenToWorldPoint(mousePosition);
 
 		// Start is called before the first frame update
 		void Start() {
+			parantTransform = gameObject.GetComponentInParent<Transform>();
 			mainCamera = Camera.main;
-
+			
 			if (!mainCamera) {
 				return;
 			}
@@ -38,7 +44,7 @@ namespace InteractionSystem {
 		void Update() {
 			if (CheckForInteractableObject()) {
 				GameObject hitObject = hitResult.transform.gameObject;
-				//Logger.Log($"Hit Object: {hitObject.name}");
+				Logger.Log($"Hit Object: {hitObject.name}");
 				interactableComponent = hitObject.GetComponent<InteractableComponent>();
 				if (!(interactableComponent is null)) {
 					var rotation = mainCamera.transform.rotation;
@@ -47,33 +53,35 @@ namespace InteractionSystem {
 					interactionUI.gameObject.SetActive(true);
 
 					Logger.Log($"Found: {interactableComponent.gameObject.name}");
-				} else if (!(interactableComponent is null)) {
+				} else if (interactableComponent is null) {
 					interactionUI.gameObject.SetActive(false);
 				}
 			}
 		}
 
-
+		public void OnLook(InputAction.CallbackContext context)
+		{
+			mousePosition += context.ReadValue<Vector2>();
+		}
+		
 		private bool CheckForInteractableObject() {
-			Ray ray = mainCamera.ViewportPointToRay(Vector3.one / InteractLength);
-
-
+			var mainCameraTransform = mainCamera.transform;
+			Ray ray = new Ray(mainCameraTransform.position, mainCameraTransform.forward);
+			
 #if UNITY_EDITOR
-			Debug.DrawRay(ray.origin, ray.direction * InteractLength, Color.yellow);
+			Debug.DrawLine(MousePositionInWorld, MousePositionInWorld  * interactLength, Color.red);
 #endif
 
 
-			return Physics.Raycast(ray, out hitResult, InteractLength);
+			return Physics.Raycast(ray, out hitResult, interactLength);
 		}
 
 		public void OnInteraction(InputAction.CallbackContext context) {
-			if (interactableComponent is null) {
-				return;
-			}
-
-			interactableComponent.OnInteractionCompleted(gameObject);
+			interactableComponent?.OnInteractionCompleted(gameObject);
 		}
 
 
 	}
+	
+	
 }

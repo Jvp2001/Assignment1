@@ -1,11 +1,12 @@
 // © 2020 Joshua Petersen. All rights reserved.
-﻿using System;
+ using System;
 using System.Collections.Generic;
 using InteractionSystem;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+ using Logger = Assignment1.Logger;
 
 
 namespace InteractionSystem {
@@ -30,19 +31,13 @@ namespace InteractionSystem {
 		}
 
 
-		public void OnInteractionCompleted(GameObject other) {
-			if (other is null) {
-				return;
-			}
+		public virtual void OnInteractionCompleted(GameObject other) {
 			
-			if (onInteracted.GetPersistentEventCount() > 0) {
-				onInteracted.Invoke(other);
-			}
+			Logger.Log("Interacted");
+			onInteracted?.Invoke(other);
 			
 		}
 
-
-		public virtual bool BeingLookedAt => true;
 	}
 
 }

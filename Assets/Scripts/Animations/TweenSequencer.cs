@@ -1,5 +1,6 @@
 // © 2020 Joshua Petersen. All rights reserved.
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace Assignment1.Animations {
 		private TweenSequencerDatum[] tweenData;
 
 		private Sequence sequence;
+
+		public Sequence Sequence => sequence;
 
 		private void Awake() {
 			sequence = DOTween.Sequence();
@@ -32,6 +35,18 @@ namespace Assignment1.Animations {
 					sequence.Append(tweenDatum.Tween);
 				}
 			}
+		}
+		
+		public void Reverse(float waitFor)
+		{
+			StartCoroutine("ReverseSequence", waitFor);
+		}
+
+		private IEnumerator ReverseSequence(float waitFor)
+		{
+			yield return new WaitForSeconds(waitFor);
+			sequence.PlayBackwards();
+			
 		}
 #if UNITY_EDITOR
 		

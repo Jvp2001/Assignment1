@@ -40,7 +40,10 @@ namespace UserInterface.Game
         void Update()
         {
             panelRenderer.visualTree.MarkDirtyRepaint();
-        
+            if (GameManager.Instance is null)
+            {
+                return;
+            }
             timerLabel.text = GameplayManager.Instance.Timer.ToString();
 
         }
