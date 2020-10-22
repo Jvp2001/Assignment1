@@ -62,6 +62,8 @@
           <e p="Animations" t="Include">
             <e p="AnimationTrigger.cs" t="Include" />
             <e p="CupboardTweenSequencer.cs" t="Include" />
+            <e p="GameplayStatesHandler.cs" t="Include" />
+            <e p="IGameplayStates.cs" t="Include" />
             <e p="TweenDatum.cs" t="Include" />
             <e p="TweenSequencer.cs" t="Include" />
             <e p="TweenSequencerDatum.cs" t="Include" />
@@ -77,6 +79,7 @@
             <e p="Difficulty.cs" t="Include" />
             <e p="GameplayManager.cs" t="Include" />
             <e p="GameplaySettings.cs" t="Include" />
+            <e p="GemSpawner.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
             <e p="TimerOptions.cs" t="Include" />
           </e>
@@ -138,6 +141,6 @@
       <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Assignment1.-467758148.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Assignment1.-270325667.00" t="ExcludeRecursive" />
   </component>
 </project>
