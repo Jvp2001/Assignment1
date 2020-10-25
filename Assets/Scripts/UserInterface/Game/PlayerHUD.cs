@@ -39,13 +39,10 @@ namespace UserInterface.Game
         // Update is called once per frame
         void Update()
         {
-            panelRenderer.visualTree.MarkDirtyRepaint();
-            if (GameManager.Instance is null)
-            {
-                return;
-            }
+            
             timerLabel.text = GameplayManager.Instance.Timer.ToString();
 
         }
+        
     }
 }

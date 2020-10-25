@@ -26,13 +26,11 @@ namespace Assignment1.FirstPersonCharacter
     {
         private float movementX;
         private float movementY;
-        [SerializeField] private CharacterController characterController;
+        private CharacterController characterController;
 
 
         [SerializeField] [Header("Movement")] private float movementSpeed = 10f;
-
-        [SerializeField] private float jumpHeight = 5f;
-
+        
         [SerializeField] private InteractionComponent interactionComponent;
 
         public InteractionComponent InteractionComponent => interactionComponent;
@@ -40,6 +38,7 @@ namespace Assignment1.FirstPersonCharacter
 
         private void Start()
         {
+            characterController = GetComponent<CharacterController>();
             Logger.Log(GameplayManager.Instance.GameplaySettings.Difficulty.ToString());
         }
 

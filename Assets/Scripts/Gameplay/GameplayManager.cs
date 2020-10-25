@@ -18,7 +18,7 @@ namespace Assignment1.Gameplay
         private CountdownTimer timer;
 
         private PlayerData playerData = new   PlayerData();     
-        private string endoOfGameMessage = "Game Over!";
+        private string endOfGameMessage = "Game Over!";
         private bool displayEndOfGameMessage = false;
         
         [SerializeField]
@@ -64,6 +64,7 @@ namespace Assignment1.Gameplay
             yield return new WaitForSeconds(3);
             displayEndOfGameMessage = false;
             Cursor.visible = true;
+            
             SceneManager.LoadScene("MainMenuScene");
         }
 
@@ -73,7 +74,7 @@ namespace Assignment1.Gameplay
             {
                 GUIStyle style = new GUIStyle {fontSize = 50};
                 GUI.Label(new Rect(new Vector2(Screen.width / 2, Screen.height / 2), new Vector2(600, 100)),
-                    endoOfGameMessage, style);
+                    endOfGameMessage, style);
             }
         }
     }

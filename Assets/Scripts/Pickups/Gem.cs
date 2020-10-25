@@ -18,15 +18,21 @@ public class Gem : MonoBehaviour
 
     public bool CanPickup
     {
-        get => sphereCollider.enabled;
-        set { sphereCollider.enabled = value; }
+        get => gameObject.activeSelf;
+        set => gameObject.SetActive( value);
     }
 
     private void OnEnable()
     {
+       
         sphereCollider = GetComponent<SphereCollider>();
         pickupAudioSource = GetComponent<AudioSource>();
         pickupMesh = GetComponent<MeshRenderer>();
+    }
+
+    private void Start()
+    {
+        CanPickup = false;
     }
 
     private void OnTriggerEnter(Collider other)

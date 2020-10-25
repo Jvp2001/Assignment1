@@ -31,6 +31,28 @@
             <e p="Gem.obj.txt" t="Include" />
           </e>
         </e>
+        <e p="OBJImport" t="Include">
+          <e p="CharWordReader.cs" t="Include" />
+          <e p="MTLLoader.cs" t="Include" />
+          <e p="OBJLoader.cs" t="Include" />
+          <e p="OBJLoaderHelper.cs" t="Include" />
+          <e p="OBJObjectBuilder.cs" t="Include" />
+          <e p="Samples" t="Include">
+            <e p="ObjFromFile.cs" t="Include" />
+            <e p="ObjFromStream.cs" t="Include" />
+          </e>
+          <e p="StringExtensions.cs" t="Include" />
+          <e p="TextureLoader" t="Include">
+            <e p="BinaryExtensions.cs" t="Include" />
+            <e p="BMPLoader.cs" t="Include" />
+            <e p="ColorExtensions.cs" t="Include" />
+            <e p="DDSLoader.cs" t="Include" />
+            <e p="ImageLoader.cs" t="Include" />
+            <e p="ImageLoaderHelper.cs" t="Include" />
+            <e p="ImageUtils.cs" t="Include" />
+            <e p="TGALoader.cs" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -73,7 +95,6 @@
             <e p="FirstPersonCameraController.cs" t="Include" />
             <e p="FirstPersonCharacterController.cs" t="Include" />
           </e>
-          <e p="GameManager.cs" t="Include" />
           <e p="Gameplay" t="Include">
             <e p="CountdownTimer.cs" t="Include" />
             <e p="Difficulty.cs" t="Include" />
