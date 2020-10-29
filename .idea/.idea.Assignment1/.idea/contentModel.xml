@@ -22,7 +22,6 @@
             </e>
             <e p="Drawers" t="Include">
               <e p="ExtendedScritableObjectDrawer.cs" t="Include" />
-              <e p="RequiredInterfaceAttributeDrawer.cs" t="Include" />
             </e>
           </e>
         </e>

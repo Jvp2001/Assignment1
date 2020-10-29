@@ -22,111 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13f1e1aa-07e6-4fa5-825b-80ce39a23bda" name="Default Changelist" comment="Level is almost finished.">
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/SequenceFinishedEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/SequenceFinishedEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/Handlers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/Handlers/SequenceFinishedEventHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/Handlers/SequenceFinishedEventHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Triggers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment1/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment1/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Bathroom/washbasin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Bathroom/washbasin.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Lights/torchere_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Lights/torchere_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_corner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Modular kitchen/kitchen_shelf_corner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Modular kitchen/modular_kitchen_table_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Sofas&amp;Chairs/kitchen_chair_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BigFurniturePack/Prefabs/Sofas&amp;Chairs/kitchen_chair_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CupboardDrawerTweenDatum.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CupboardDrawerTweenDatum.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Utilities/Attributes/RequiredInterfaceAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Utilities/Attributes/RequiredInterfaceAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Utilities/Drawers/ExtendedScritableObjectDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Utilities/Drawers/ExtendedScritableObjectDrawer.cs" afterDir="false" />
+    <list default="true" id="13f1e1aa-07e6-4fa5-825b-80ce39a23bda" name="Default Changelist" comment="Modified the level and I need help with transforms for my animation system.">
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Utilities/Drawers/RequiredInterfaceAttributeDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Utilities/Drawers/RequiredInterfaceAttributeDrawer.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractableComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractableComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractionComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/UserInterface.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/UserInterface/InteractionUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/UserInterface/InteractionUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/UserInterface/InteractionUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InteractionSystem/UserInterface/InteractionUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid/1000131.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid/1000131.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid/Furniture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid/Furniture/SimpleCuboard (By danimand).meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid/Furniture/SimpleCuboard (By danimand)/cupboard.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/TrboSquid/Furniture/SimpleCuboard (By danimand)/cupboard.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Preview01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Preview01.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Preview02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Preview02.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Preview03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Preview03.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/BMAG-m.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/BMAG-m.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/BMAG.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/BMAG.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/Metall-scratch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/Metall-scratch.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/iron_bump.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/iron_bump.JPG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/tile_gloss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/tile_gloss.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/wall_032.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Textures/wall_032.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Vintage-Door.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/VintageDoor/Vintage-Door.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/uploads_files_179010_Worn_Key.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/cgtrader/uploads_files_179010_Worn_Key.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FirstPersonCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FirstPersonCharacter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/AnimationTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggers/AnimationTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/AnimationTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggers/AnimationTrigger.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/CupboardTweenSequencer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/CupboardTweenSequencer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/GameplayStatesHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/GameplayStatesHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/IGameplayStates.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/IGameplayStates.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenDatum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenDatum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenDatum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenDatum.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenSequencer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenSequencer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenSequencer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenSequencer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenSequencerDatum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenSequencerDatum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenSequencerDatum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenSequencerDatum.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TweenType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/FirstPersonCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/FirstPersonCameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/FirstPersonCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/FirstPersonCharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/CountdownTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/CountdownTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplayManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplayManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplaySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplaySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Gem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Gem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/GameplaySettingsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/GameplaySettingsMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/MainMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/MenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/OptionsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/OptionsMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/SettingsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/SettingsMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/VideoSettingsMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Controllers/VideoSettingsMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Game/PlayerHUD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Game/PlayerHUD.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UserInterface/Elements/VerticalBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UserInterface/Elements/VerticalBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UserInterface/Layouts/PlayerHUD.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UserInterface/Layouts/PlayerHUD.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Utilities/Attributes/ButtonAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Utilities/Attributes/ButtonAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +109,6 @@
         <option value="$PROJECT_DIR$/Assembly-CSharp.csproj" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Animations/Handlers/DrawerOpenedHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/FirstPersonCharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/CountdownTimer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Animations/Handlers/SequenceFinishedEventHandler.cs" />
@@ -216,13 +117,14 @@
         <option value="$PROJECT_DIR$/Assets/AnimationSystem/Scripts/TweenSequencer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Game/PlayerHUD.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplayManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractableComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Gem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/CharacterControllerPusher.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/Pusher.cs" />
         <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractionComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractableComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FirstPersonCharacter/FirstPersonCharacterController.cs" />
       </list>
     </option>
   </component>
@@ -308,7 +210,7 @@
       <workItem from="1603707971452" duration="7216000" />
       <workItem from="1603723858992" duration="4615000" />
       <workItem from="1603793818160" duration="16128000" />
-      <workItem from="1603967475416" duration="2181000" />
+      <workItem from="1603967475416" duration="2498000" />
     </task>
     <task id="LOCAL-00001" summary="Updated">
       <created>1602756535990</created>
@@ -345,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603635039003</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modified the level and I need help with transforms for my animation system.">
+      <created>1603973571267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603973571267</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +279,8 @@
     <MESSAGE value="Updated" />
     <MESSAGE value="First Person Controller is fixed." />
     <MESSAGE value="Level is almost finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Level is almost finished." />
+    <MESSAGE value="Modified the level and I need help with transforms for my animation system." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified the level and I need help with transforms for my animation system." />
   </component>
   <component name="WindowStateProjectService">
     <state x="837" y="622" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603636401865">
@@ -385,10 +295,10 @@
     <state x="755" y="194" key="#xdebugger.evaluate/0.0.1920.1040/-1680.23.1680.1010@0.0.1920.1040" timestamp="1601296481266" />
     <state x="705" y="217" key="#xdebugger.evaluate/0.23.1792.1037@0.23.1792.1037" timestamp="1603187687519" />
     <state x="705" y="218" key="#xdebugger.evaluate/0.23.1792.1042@0.23.1792.1042" timestamp="1603198596683" />
-    <state x="642" y="432" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1603793953265">
+    <state x="642" y="432" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1603973650548">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="642" y="432" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1792.1120@0.0.1792.1120" timestamp="1603793953265" />
+    <state x="642" y="432" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1792.1120@0.0.1792.1120" timestamp="1603973650548" />
     <state x="738" y="260" key="FileChooserDialogImpl" timestamp="1600869230029">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -670,10 +580,10 @@
     <state x="100" y="100" width="1592" height="920" key="VCS.FileHistoryDialog/0.23.1792.1036@0.23.1792.1036" timestamp="1603284154710" />
     <state x="100" y="116" width="1592" height="856" key="VCS.FileHistoryDialog/0.23.1792.1042@0.23.1792.1042" timestamp="1603192730613" />
     <state x="100" y="100" width="1592" height="920" key="VCS.FileHistoryDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1603803462642" />
-    <state x="515" y="272" key="Vcs.Push.Dialog.v2" timestamp="1603880290068">
+    <state x="515" y="272" key="Vcs.Push.Dialog.v2" timestamp="1603973587685">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="515" y="272" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1603880290068" />
+    <state x="515" y="272" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1603973587685" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1680.23.1680.1010@0.0.1920.1040" timestamp="1602570945805" />
     <state x="515" y="274" key="Vcs.Push.Dialog.v2/0.23.1792.1033@0.23.1792.1033" timestamp="1603179472045" />
     <state x="100" y="115" width="1592" height="847" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603278824117">
@@ -706,10 +616,10 @@
     <state width="600" height="461" key="javadoc.popup" timestamp="1603280767760">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="544" height="260" key="javadoc.popup.new" timestamp="1603802900121">
+    <state width="544" height="260" key="javadoc.popup.new" timestamp="1603973629786">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="544" height="260" key="javadoc.popup.new/0.0.1792.1120@0.0.1792.1120" timestamp="1603802900121" />
+    <state width="544" height="260" key="javadoc.popup.new/0.0.1792.1120@0.0.1792.1120" timestamp="1603973629786" />
     <state width="510" height="234" key="javadoc.popup.new/0.0.1920.1040/-1680.23.1680.1010@-1680.23.1680.1010" timestamp="1602515248720" />
     <state width="544" height="260" key="javadoc.popup.new/0.23.1792.1033@0.23.1792.1033" timestamp="1602750535274" />
     <state width="544" height="260" key="javadoc.popup.new/0.23.1792.1037@0.23.1792.1037" timestamp="1602591892945" />
@@ -918,13 +828,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractableComponent.cs</url>
-          <line>25</line>
+          <line>23</line>
           <properties documentPath="$PROJECT_DIR$/Assets/InteractionSystem/Scripts/InteractableComponent.cs" initialLine="32">
             <startOffsets>
-              <option value="770" />
+              <option value="691" />
             </startOffsets>
             <endOffsets>
-              <option value="771" />
+              <option value="692" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="49" />

@@ -10,30 +10,27 @@ using UnityEngine.Serialization;
 using Logger = Assignment1.Logger;
 
 
-namespace InteractionSystem
-{
-    public class InteractableComponent : MonoBehaviour
-    {
+namespace InteractionSystem {
+	public class InteractableComponent : MonoBehaviour {
 
-        [SerializeField] private OnInteractedUnityEvent onInteracted;
+		[SerializeField]
+		private OnInteractedUnityEvent onInteracted;
 
-        protected OnInteractedUnityEvent OnInteracted => onInteracted;
+		protected OnInteractedUnityEvent OnInteracted => onInteracted;
 
 
-        void Start()
-        {
-            gameObject.layer = LayerMask.NameToLayer("Interactable");
-        }
+		void Start() {
+			gameObject.layer = LayerMask.NameToLayer("Interactable");
+		}
 
-        public virtual void OnInteractionCompleted(GameObject other)
-        {
-            Logger.Log("Interacted"); 
-            onInteracted?.Invoke(other);
-            DestroyImmediate(this);
-        }
+		public virtual void OnInteractionCompleted(GameObject other) {
+			Logger.Log("Interacted");
+			onInteracted?.Invoke(other);
+			DestroyImmediate(this);
+		}
 
-        [Serializable]
-        protected class OnInteractedUnityEvent : UnityEvent<GameObject>
-        {}
-    }
+		[Serializable]
+		protected class OnInteractedUnityEvent : UnityEvent<GameObject> {
+		}
+	}
 }
