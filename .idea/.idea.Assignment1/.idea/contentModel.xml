@@ -6,6 +6,15 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AnimationSystem" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="SequenceFinishedEvent.cs" t="Include" />
+            <e p="TweenDatum.cs" t="Include" />
+            <e p="TweenSequencer.cs" t="Include" />
+            <e p="TweenSequencerDatum.cs" t="Include" />
+            <e p="TweenType.cs" t="Include" />
+          </e>
+        </e>
         <e p="Editor" t="Include">
           <e p="Utilities" t="Include">
             <e p="Attributes" t="Include">
@@ -22,14 +31,6 @@
             <e p="InteractableComponent.cs" t="Include" />
             <e p="InteractionComponent.cs" t="Include" />
           </e>
-          <e p="UserInterface" t="Include">
-            <e p="InteractionUI.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Models" t="Include">
-          <e p="cgtrader" t="Include">
-            <e p="Gem.obj.txt" t="Include" />
-          </e>
         </e>
         <e p="OBJImport" t="Include">
           <e p="CharWordReader.cs" t="Include" />
@@ -39,7 +40,6 @@
           <e p="OBJObjectBuilder.cs" t="Include" />
           <e p="Samples" t="Include">
             <e p="ObjFromFile.cs" t="Include" />
-            <e p="ObjFromStream.cs" t="Include" />
           </e>
           <e p="StringExtensions.cs" t="Include" />
           <e p="TextureLoader" t="Include">
@@ -82,18 +82,15 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Animations" t="Include">
-            <e p="AnimationTrigger.cs" t="Include" />
-            <e p="CupboardTweenSequencer.cs" t="Include" />
-            <e p="GameplayStatesHandler.cs" t="Include" />
-            <e p="IGameplayStates.cs" t="Include" />
-            <e p="TweenDatum.cs" t="Include" />
-            <e p="TweenSequencer.cs" t="Include" />
-            <e p="TweenSequencerDatum.cs" t="Include" />
-            <e p="TweenType.cs" t="Include" />
+            <e p="Handlers" t="Include">
+              <e p="SequenceFinishedEventHandler.cs" t="Include" />
+            </e>
           </e>
           <e p="FirstPersonCharacter" t="Include">
+            <e p="CharacterControllerPusher.cs" t="Include" />
             <e p="FirstPersonCameraController.cs" t="Include" />
             <e p="FirstPersonCharacterController.cs" t="Include" />
+            <e p="Pusher.cs" t="Include" />
           </e>
           <e p="Gameplay" t="Include">
             <e p="CountdownTimer.cs" t="Include" />
@@ -109,6 +106,9 @@
             <e p="Gem.cs" t="Include" />
           </e>
           <e p="Singleton.cs" t="Include" />
+          <e p="Triggers" t="Include">
+            <e p="AnimationTrigger.cs" t="Include" />
+          </e>
           <e p="UserInterface" t="Include">
             <e p="Controllers" t="Include">
               <e p="GameplaySettingsMenuController.cs" t="Include" />

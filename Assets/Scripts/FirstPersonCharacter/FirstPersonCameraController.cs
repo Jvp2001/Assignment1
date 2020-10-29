@@ -20,14 +20,16 @@ namespace Assignment1.FirstPersonCharacter
     {
         [SerializeField] private Transform characterBody;
         [SerializeField] private Camera mainCamera;
+
         [SerializeField] [Header("Mouse")] [Range(10f, 100f)]
         private float mouseSensitivity = 10.0f;
 
-        
-        private float xRotation;
         private float lookX;
         private float lookY;
         private Vector2 mousePosition;
+
+
+        private float xRotation;
 
         private float
             yRotation;

@@ -85,8 +85,8 @@ namespace DG.Tweening
 
         public static class Physics
         {
-            // Called via DOTweenExternalCommand callback
-            public static void SetOrientationOnPath(PathOptions options, Tween t, Quaternion newRot, Transform trans)
+	        // Called via DOTweenExternalCommand callback
+	        public static void SetOrientationOnPath(PathOptions options, Tween t, Quaternion newRot, Transform trans)
             {
 #if true // PHYSICS_MARKER
                 if (options.isRigidbody) ((Rigidbody)t.target).rotation = newRot;
@@ -96,8 +96,8 @@ namespace DG.Tweening
 #endif
             }
 
-            // Returns FALSE if the DOTween's Physics2D Module is disabled, or if there's no Rigidbody2D attached
-            public static bool HasRigidbody2D(Component target)
+	        // Returns FALSE if the DOTween's Physics2D Module is disabled, or if there's no Rigidbody2D attached
+	        public static bool HasRigidbody2D(Component target)
             {
 #if false // PHYSICS2D_MARKER
                 return target.GetComponent<Rigidbody2D>() != null;
@@ -106,13 +106,12 @@ namespace DG.Tweening
 #endif
             }
 
-            #region Called via Reflection
+	        #region Called via Reflection
 
-
-            // Called via Reflection by DOTweenPathInspector
-            // Returns FALSE if the DOTween's Physics Module is disabled, or if there's no rigidbody attached
+	        // Called via Reflection by DOTweenPathInspector
+	        // Returns FALSE if the DOTween's Physics Module is disabled, or if there's no rigidbody attached
 #if UNITY_2018_1_OR_NEWER
-            [UnityEngine.Scripting.Preserve]
+	        [UnityEngine.Scripting.Preserve]
 #endif
             public static bool HasRigidbody(Component target)
             {
@@ -125,7 +124,7 @@ namespace DG.Tweening
 
             // Called via Reflection by DOTweenPath
 #if UNITY_2018_1_OR_NEWER
-            [UnityEngine.Scripting.Preserve]
+	        [UnityEngine.Scripting.Preserve]
 #endif
             public static TweenerCore<Vector3, Path, PathOptions> CreateDOTweenPathTween(
                 MonoBehaviour target, bool tweenRigidbody, bool isLocal, Path path, float duration, PathMode pathMode
@@ -151,6 +150,7 @@ namespace DG.Tweening
             }
 
             #endregion
+
         }
     }
 }

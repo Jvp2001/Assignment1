@@ -8,11 +8,16 @@ namespace Assignment1.Gameplay
     public class GameplaySettings
     {
         public static readonly Difficulty[] Difficulties = {Difficulty.Easy, Difficulty.Normal, Difficulty.Hard};
-        public Difficulty Difficulty { get; set; } = Difficulty.Normal;
 
         [SerializeField] private TimerOptions easyTime = new TimerOptions(2,30);
         [SerializeField] private TimerOptions normalTime = new TimerOptions(1, 45);
         [SerializeField] private TimerOptions hardTime = new TimerOptions(1,45);
+
+        public GameplaySettings()
+        {
+        }
+
+        public Difficulty Difficulty { get; set; } = Difficulty.Normal;
 
 
         public TimerOptions EasyTime => easyTime;
@@ -38,10 +43,6 @@ namespace Assignment1.Gameplay
                         throw new ArgumentOutOfRangeException();
                 }
             }
-        }
-
-        public GameplaySettings()
-        {
         }
     }
 }

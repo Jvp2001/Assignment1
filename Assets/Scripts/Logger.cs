@@ -21,14 +21,14 @@ namespace Assignment1 {
 	/// </example> 
 	/// Script is from  <a cref="https://forum.unity.com/threads/strip-release-build-from-all-debug-log-calls.353600/?_ga=2.177561125.185472191.1600770389-724911382.1591691267">here</a>
 	internal static class Logger {
-	/// <summary>
+		/// <summary>
 	/// The name of the symbol that has been defined at the top of this file.
 	///  
 	/// </summary>
 	public const string LoggerSymbol = "ENABLE_LOG";
 
 
-	[System.Diagnostics.Conditional(LoggerSymbol)]
+		[System.Diagnostics.Conditional(LoggerSymbol)]
 	public static void Log(object message) {
 		Debug.Log(message);
 	}
@@ -97,5 +97,5 @@ namespace Assignment1 {
 	public static void LogException(System.Exception exception, Object context) {
 		Debug.LogException(exception, context);
 	}
-}
+	}
 }

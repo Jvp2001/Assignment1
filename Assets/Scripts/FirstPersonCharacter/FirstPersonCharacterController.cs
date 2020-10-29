@@ -1,6 +1,7 @@
 // © 2020 Joshua Petersen. All rights reserved.
 
 using Assignment1.Gameplay;
+using Assignment1.InteractionSystem;
 using InteractionSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,14 +25,14 @@ namespace Assignment1.FirstPersonCharacter
     /// </remarks>
     public class FirstPersonCharacterController : MonoBehaviour
     {
-        private float movementX;
-        private float movementY;
-        private CharacterController characterController;
 
 
         [SerializeField] [Header("Movement")] private float movementSpeed = 10f;
-        
+
         [SerializeField] private InteractionComponent interactionComponent;
+        private CharacterController characterController;
+        private float movementX;
+        private float movementY;
 
         public InteractionComponent InteractionComponent => interactionComponent;
 

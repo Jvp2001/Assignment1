@@ -1,5 +1,5 @@
 // © 2020 Joshua Petersen. All rights reserved.
-﻿// Modifications made by Luiz Wendt, Rob Tranquillo
+ // Modifications made by Luiz Wendt, Rob Tranquillo
 // Released under the MIT Licence as held at https://opensource.org/licenses/MIT
 
 // Must be placed within a folder named "Editor"

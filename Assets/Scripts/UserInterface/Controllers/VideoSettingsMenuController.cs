@@ -13,11 +13,9 @@ namespace Assignment1.UserInterface {
 	public class VideoSettingsMenuController : SettingsMenuController {
 		private Slider brightnessSlider;
 
-		private Button oldResolutionButton;
-
 		private Resolution newResolution;
 
-		
+		private Button oldResolutionButton;
 
 
 		protected override void Initialise() {

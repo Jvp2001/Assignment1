@@ -1,25 +1,20 @@
 // © 2020 Joshua Petersen. All rights reserved.
 
-using System;
+using InteractionSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-using UserInterface.Game.Interaction;
-using Logger = Assignment1.Logger;
 
-namespace InteractionSystem
+namespace Assignment1.InteractionSystem
 {
     public class InteractionComponent : MonoBehaviour
     {
         [SerializeField] private float interactLength = 50.0f;
+        private bool canInteract = false;
 
         private RaycastHit hitResult;
 
         private InteractableComponent interactableComponent;
         private Camera mainCamera;
-        private bool canInteract = false;
         private Vector2 mousePosition = Vector2.zero;
 
         private Transform CameraTransform => mainCamera.transform;
@@ -28,10 +23,10 @@ namespace InteractionSystem
         {
             get
             {
-                return GetComponent<PlayerInput>().currentActionMap["Interact"].controls[0].name;
+                return GetComponent<PlayerInput>()?.currentActionMap["Interact"].controls[0].name.ToUpper();
             }
         }
-        
+
         // Start is called before the first frame update
         void Start()
         {
@@ -53,8 +48,8 @@ namespace InteractionSystem
                 GameObject hitObject = hitResult.transform.gameObject;
                 Logger.Log($"Hit Object: {hitObject.name}");
                 interactableComponent = hitObject.GetComponent<InteractableComponent>();
-                canInteract = (!(interactableComponent is null) &&
-                               hitObject.gameObject.layer == LayerMask.NameToLayer("Interactable"));
+                canInteract = !(interactableComponent is null) &&  interactableComponent.isActiveAndEnabled &&
+                              hitObject.gameObject.layer == LayerMask.NameToLayer("Interactable");
                 if (canInteract)
                 {
                     Logger.Log($"Found: {interactableComponent.gameObject.name}");
@@ -68,10 +63,12 @@ namespace InteractionSystem
             {
                 string text = $"Press {InteractKeyName}";
                 GUIStyle style = new GUIStyle {fontSize = 50};
+                style.normal.textColor = Color.white;
                 Vector2 textSize = GUI.skin.label.CalcSize(new GUIContent(text));
 
                 GUI.Label(new Rect(new Vector2(Screen.width / 2, Screen.height / 2), new Vector2(textSize.x, textSize.y)),
                     text, style);
+                
             }
         }
 
@@ -93,9 +90,12 @@ namespace InteractionSystem
             return Physics.Raycast(ray, out hitResult, interactLength);
         }
 
-        public void OnInteraction(InputAction.CallbackContext context)
-        {
+        public void OnInteraction(InputAction.CallbackContext context) {
+            if (hitResult.collider is null) return;
+            canInteract = false;
+            hitResult.collider.gameObject.layer = LayerMask.NameToLayer("Default");
             interactableComponent?.OnInteractionCompleted(gameObject);
+            
         }
     }
 }

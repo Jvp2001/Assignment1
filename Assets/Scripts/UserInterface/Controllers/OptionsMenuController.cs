@@ -19,10 +19,6 @@ namespace Assignment1.UserInterface {
 		private void Video(Button button) {
 			SceneManager.LoadScene("VideoOptionsMenu");
 		}
-
-
-
-
 	}
 
 }

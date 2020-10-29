@@ -3,32 +3,28 @@
 /// <copyright> © 2020 Joshua Petersen. All rights reserved. </copyright>
 /// </file>
 
- using Assignment1;
+using Assignment1;
 using UnityEngine;
 
-namespace Gameplay
-{
-    /// <summary>
-    /// I am using a delegate to update the UI due to it being better than using update. 
-    /// </summary>
-    /// <param name="newValue"> the newValue of <see cref="PlayerData.amountCollected"/>.</param>
-    public delegate void AmountCollectedChanged(short newValue);
+namespace Gameplay {
+	/// <summary>
+	/// I am using a delegate to update the UI due to it being better than using update. 
+	/// </summary>
+	/// <param name="newValue"> the newValue of <see cref="PlayerData.amountCollected"/>.</param>
+	public delegate void AmountCollectedChanged(short newValue);
 
-    public class PlayerData
-    {
-        private short amountCollected;
+	public class PlayerData {
+		private short amountCollected;
 
-        public event AmountCollectedChanged OnAmountCollectedChanged;
+		public short AmountCollected {
+			get => amountCollected;
+			set {
+				amountCollected = value;
 
-        public short AmountCollected
-        {
-            get => amountCollected;
-            set
-            {
-                amountCollected = value;
+				OnAmountCollectedChanged?.Invoke(amountCollected);
+			}
+		}
 
-                OnAmountCollectedChanged?.Invoke(amountCollected);
-            }
-        }
-    }
+		public event AmountCollectedChanged OnAmountCollectedChanged;
+	}
 }

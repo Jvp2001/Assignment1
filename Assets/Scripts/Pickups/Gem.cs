@@ -1,55 +1,53 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Assignment1.Animations;
+using Assignment1.AnimationSystem;
 using Assignment1.Gameplay;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using Logger = Assignment1.Logger;
 
 [RequireComponent(typeof(MeshRenderer))]
-[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(SphereCollider))]
-public class Gem : MonoBehaviour
-{
-    private SphereCollider sphereCollider;
-    private AudioSource pickupAudioSource;
-    private MeshRenderer pickupMesh;
+public class Gem : MonoBehaviour {
+
+	[SerializeField]
+	private AudioClip pickupSound;
+
+	private AudioSource audioSource;
+	private AudioSource currentAudioSorce;
+	private MeshRenderer pickupMesh;
+	private SphereCollider sphereCollider;
+	private TweenSequencer tweenSequencer;
 
 
-    public bool CanPickup
-    {
-        get => gameObject.activeSelf;
-        set => gameObject.SetActive( value);
-    }
+	public bool CanPickup {
+		get => gameObject.activeSelf;
+		set => gameObject.SetActive(value);
+	}
 
-    private void OnEnable()
-    {
-       
-        sphereCollider = GetComponent<SphereCollider>();
-        pickupAudioSource = GetComponent<AudioSource>();
-        pickupMesh = GetComponent<MeshRenderer>();
-    }
+	private void Start() {
+		CanPickup = false;
+	}
 
-    private void Start()
-    {
-        CanPickup = false;
-    }
+	private void OnEnable() {
+		sphereCollider = GetComponent<SphereCollider>();
+		pickupMesh = GetComponent<MeshRenderer>();
+	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Logger.Log("Collided with player!");
-        if (other.CompareTag("Player"))
-        {
-            ++GameplayManager.Instance.PlayerData.AmountCollected;
-            pickupAudioSource.Play();
-            gameObject.SetActive(false);
-            gameObject.GetComponentInParent<GameplayStatesHandler>().OnGemCollected();
-        }
-    }
+	private void OnTriggerEnter(Collider other) {
+		Logger.Log("Collided with player!");
+		Logger.Log($"Other tag: {other.tag}");
+		if (other.CompareTag("Player")) {
+			AudioSource.PlayClipAtPoint(pickupSound, other.transform.position);
+			++GameplayManager.Instance.PlayerData.AmountCollected;
+			Destroy(this);
+		}
+		
+	}
 
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-} 
+	public void OnCollected(TweenSequencer sequencer) {
+		gameObject.SetActive(false);
+		
+	}
+}

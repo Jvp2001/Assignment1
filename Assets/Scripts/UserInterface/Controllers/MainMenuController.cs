@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 
 namespace Assignment1.UserInterface.Controllers {
 	public sealed class MainMenuController : MenuController {
-		
+
 		//TODO: change the "Play" button logic to load the correct scene later.
 		protected override Dictionary<string, Action<Button>> ButtonActions =>
 			new Dictionary<string, Action<Button>> {
@@ -21,11 +21,10 @@ namespace Assignment1.UserInterface.Controllers {
 				{"exit", button => Application.Quit(0)}
 			};
 
-		
+
 		private static void Options(Button button) {
 			Logger.Log("MainMenu: Options clicked!");
 			SceneManager.LoadScene("Scenes/Menus/OptionsMenu");
 		}
-
 	}
 }

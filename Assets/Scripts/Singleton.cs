@@ -22,10 +22,12 @@ namespace Assignment1
         /// Check to see if we're about to be destroyed.
         /// </summary>
         private static bool shuttingDown = false;
+
         private static object lockedObject = new object();
         private static T instance;
 
         public bool AutoInstantiate { get; protected set; } = true;
+
         /// <summary>
         /// Access singleton instance through this property.
         /// </summary>
@@ -43,7 +45,26 @@ namespace Assignment1
                 return CreateInstance();
             }
         }
-        
+
+        private void OnEnable()
+        {
+            if (AutoInstantiate)
+            {
+                CreateInstance();
+            }
+        }
+
+
+        private void OnDestroy()
+        {
+            shuttingDown = true;
+        }
+
+        private void OnApplicationQuit()
+        {
+            shuttingDown = true;
+        }
+
         private static T CreateInstance()
         {
             lock (lockedObject)
@@ -68,25 +89,6 @@ namespace Assignment1
 
                 return instance;
             }
-        }
-
-        private void OnEnable()
-        {
-            if (AutoInstantiate)
-            {
-                CreateInstance();
-            }
-        }
-
-        private void OnApplicationQuit()
-        {
-            shuttingDown = true;
-        }
-
-
-        private void OnDestroy()
-        {
-            shuttingDown = true;
         }
     }
 }

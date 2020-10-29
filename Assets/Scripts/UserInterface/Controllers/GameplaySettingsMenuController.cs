@@ -11,9 +11,9 @@ using UnityEngine.UIElements;
 
 namespace Assignment1.UserInterface.Controllers {
 	public class GameplaySettingsMenuController : SettingsMenuController {
+		private Difficulty newDifficulty;
 
 		private Button oldDifficultyButton;
-		private Difficulty newDifficulty;
 
 		protected override void Initialise() {
 			ForEach<ScrollView>(listView => {

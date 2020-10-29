@@ -61,6 +61,5 @@ namespace Assignment1.UserInterface.Controllers {
 			SceneManager.LoadScene("OptionsMenu");
 			Logger.Log("Back button clicked!");
 		}
-
 	}
 }

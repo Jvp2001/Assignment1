@@ -40,7 +40,11 @@ namespace Assignment1.UserInterface {
 		/// </summary>
 		protected abstract Dictionary<string, Action<Button>> ButtonActions { get; }
 
-		
+		private void Awake() {
+			SceneManager.sceneLoaded += OnSceneLoaded;
+		}
+
+
 		/// <summary>
 		/// <para>
 		/// A simple wrapper around the ForEach method in the <see cref="UQueryBuilder{T}"/>.
@@ -51,10 +55,6 @@ namespace Assignment1.UserInterface {
 		/// <typeparam name="T">The type of the UI element</typeparam>
 		protected void ForEach<T>(Action<T> action) where T : VisualElement {
 			PanelRenderer.visualTree.Query<T>().ForEach(action);
-		}
-
-		private void OnEnable() {
-			SceneManager.sceneLoaded += OnSceneLoaded;
 		}
 
 		private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
@@ -75,18 +75,13 @@ namespace Assignment1.UserInterface {
 		///</para>
 		///</remarks>
 		///</summary>
+		///<seealso cref="Awake"/>
 		///<seealso cerf="OnSceneLoaded"/>
-		///<seealso cref="OnEnable"/>
-		///<seealso cref="OnDisable"/>
 		protected virtual void Initialise() {
 		}
 
 		private void SetupButtonActions() {
 			ForEach<Button>(button => { button.clicked += () => ButtonActions[button.name.ToLower()](button); });
-		}
-
-		private void OnDisable() {
-			SceneManager.sceneLoaded -= OnSceneLoaded;
 		}
 	}
 }

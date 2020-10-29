@@ -14,10 +14,6 @@ namespace InteractionSystem
 {
     public class InteractableComponent : MonoBehaviour
     {
-        [Serializable]
-        protected class OnInteractedUnityEvent : UnityEvent<GameObject>
-        {
-        }
 
         [SerializeField] private OnInteractedUnityEvent onInteracted;
 
@@ -29,14 +25,15 @@ namespace InteractionSystem
             gameObject.layer = LayerMask.NameToLayer("Interactable");
         }
 
-
-  
         public virtual void OnInteractionCompleted(GameObject other)
         {
-            Logger.Log("Interacted");
+            Logger.Log("Interacted"); 
             onInteracted?.Invoke(other);
+            DestroyImmediate(this);
         }
 
-   
+        [Serializable]
+        protected class OnInteractedUnityEvent : UnityEvent<GameObject>
+        {}
     }
 }

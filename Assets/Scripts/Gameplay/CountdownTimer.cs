@@ -6,24 +6,27 @@ using UnityEngine;
 
 namespace Assignment1.Gameplay
 {
+    
     public delegate void CountdownFinished();
     public class CountdownTimer : MonoBehaviour
     {
-        public event CountdownFinished OnCountdownFinished;
-        public float CurrentTime { get; set; }
 
-        public bool Paused { get; set; } = true; 
-        
 
         public CountdownTimer(TimerOptions startTime)
         {
             CurrentTime = startTime.Minutes * 60 + startTime.Seconds;
         }
 
+        public float CurrentTime { get; set; }
+
+        public bool Paused { get; set; } = true;
+
         public void Start()
         {
             StartCoroutine("UpdateTimer");
         }
+
+        public event CountdownFinished OnCountdownFinished;
 
         private IEnumerator UpdateTimer()
         {
