@@ -12,6 +12,14 @@ using UserInterface.Game;
 
 namespace Assignment1.Gameplay
 {
+    
+    /// <summary>
+    /// A <see cref="Singleton{T}"/> class which contains references for other gameplay related data.
+    /// Also, it controls the win and lose state of the game. 
+    /// </summary>
+    /// <seealso cref="CountdownTimer"/>
+    /// <seealso cref="PlayerData"/>
+    /// <seealso cref="GameplaySettings"/>
     [RequireComponent(typeof(CountdownTimer))]
     public class GameplayManager : Singleton<GameplayManager>
     {
@@ -19,35 +27,40 @@ namespace Assignment1.Gameplay
         [SerializeField]
         private GameplaySettings gameplaySettings = new GameplaySettings();
 
+        /// <summary>
+        /// Controls if the end of game message should be displayed.
+        /// </summary>
         private bool displayEndOfGameMessage = false;
+        /// <summary>
+        /// Store the message which will be displayed at the end of the game. 
+        /// </summary>
         private string endOfGameMessage = "Game Over!";
-
-        private PlayerData playerData = new   PlayerData();
-        private CountdownTimer timer;
+        
         [SerializeField]
         private short numberOfGemsToWin = 5;
-
-
+        
+        
         public GameplaySettings GameplaySettings => gameplaySettings;
 
-        public PlayerData PlayerData => playerData;
+        public PlayerData PlayerData { get; } = new   PlayerData();
 
-        public CountdownTimer Timer => timer;
+        public CountdownTimer Timer { get; private set; }
 
         public short NumberOfGemsToWin => numberOfGemsToWin;
 
+        
         private void Awake()
         {
-            timer = GetComponent<CountdownTimer>();
-            timer.CurrentTime = GameplaySettings.CountdownTime;
-            timer.OnCountdownFinished += OnCountdownFinished;
+            Application.targetFrameRate = 60;
+            Timer = GetComponent<CountdownTimer>();
+            Timer.CurrentTime = GameplaySettings.CountdownTime;
+            
             
             SceneManager.sceneLoaded += (scene, mode) =>
             {
                 if (scene.name == "MainLevel")
                 {
-                    Logger.Log(PlayerHUD.Instance);
-                    timer.Paused = false;
+                    Timer.Paused = false;
 
                 }
             };
@@ -56,6 +69,7 @@ namespace Assignment1.Gameplay
 
         private void Start()
         {
+            Timer.OnCountdownFinished += OnCountdownFinished;
             PlayerData.OnAmountCollectedChanged += CheckForGameCompletion;
         }
 
@@ -69,6 +83,10 @@ namespace Assignment1.Gameplay
             }
         }
 
+        /// <summary>
+        /// A callback method for my <see cref="AmountCollectedChanged"/> delegate. If the player has collected the minimum number of gems, then it will call the <see cref="GameCompleted"> Coroutine. 
+        /// <param name="value"></param>
+        /// 
         private void CheckForGameCompletion(short value)
         {
             if (PlayerData.AmountCollected >= NumberOfGemsToWin)
@@ -77,11 +95,16 @@ namespace Assignment1.Gameplay
             }
                 
         }
-
+        
         private IEnumerator GameCompleted() {
-            yield return new WaitUntil(() =>PlayerData.AmountCollected >= NumberOfGemsToWin);
+            yield return new WaitUntil(() => PlayerData.AmountCollected >= NumberOfGemsToWin);
             StartCoroutine(nameof(GameFinished), "Game Completed!");
         }
+        /// <summary>
+        /// This coroutine display a message, at the end of the game, using IMGUI system.
+        /// </summary>
+        /// <param name="message"> The text that you want to write on the screen .</param>
+        /// <returns></returns>
 
         private IEnumerator GameFinished(string message) {
             FindObjectOfType<PlayerInput>().enabled = false;
@@ -102,7 +125,7 @@ namespace Assignment1.Gameplay
 
         private IEnumerator GameOver()
         {
-            yield return new WaitUntil(() => timer.CurrentTime < 1f);
+            yield return new WaitUntil(() => Timer.CurrentTime < 1f);
             StartCoroutine(nameof(GameFinished), "Game Over!");
         }
     }

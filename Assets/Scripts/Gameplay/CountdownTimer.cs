@@ -8,37 +8,55 @@ namespace Assignment1.Gameplay
 {
     
     public delegate void CountdownFinished();
+    
+    
     public class CountdownTimer : MonoBehaviour
     {
+        private bool TimerIsFinished =>  !Paused && CurrentTime < 0.0f;
 
 
-        public CountdownTimer(TimerOptions startTime)
-        {
-            CurrentTime = startTime.Minutes * 60 + startTime.Seconds;
+        public CountdownTimer(TimerOptions startTime) {
+            CurrentTime = startTime;
         }
 
         public float CurrentTime { get; set; }
 
+        /// <summary>
+        /// Toggles the timer.
+        /// </summary>
         public bool Paused { get; set; } = true;
 
         public void Start()
         {
             StartCoroutine("UpdateTimer");
         }
-
+        
+        
         public event CountdownFinished OnCountdownFinished;
 
-        private IEnumerator UpdateTimer()
-        {
-            while (!Paused && CurrentTime > 0.0f) 
+        /// <summary>
+        /// Updates the timer every second.
+        /// </summary>
+        /// <returns> <see cref="IEnumerator"/> because it is a coroutine.</returns>
+        private IEnumerator UpdateTimer() {
+            
+            while (!TimerIsFinished) 
             {
                 yield return new WaitForSecondsRealtime(1.0f);
-                Logger.Log($"ELLAPSED TIME: {CurrentTime}");
+                Logger.Log($"ELAPSED TIME: {CurrentTime}");
                 --CurrentTime;
             }
-            OnCountdownFinished?.Invoke();
-        }
 
+            if (TimerIsFinished) {
+                OnCountdownFinished?.Invoke();
+            }
+        }
+        
+        
+        /// <summary>
+        /// Converts the <see cref="CurrentTime"/> into a human readable, digital clock, formatted string. This is used in the <see cref="Assignment1.UserInterface.Game.PlayerHUD"/> class.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             float seconds = CurrentTime % 60;

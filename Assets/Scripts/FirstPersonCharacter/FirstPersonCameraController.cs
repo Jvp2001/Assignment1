@@ -29,7 +29,6 @@ namespace Assignment1.FirstPersonCharacter {
 
 		private float lookX;
 		private float lookY;
-		private Vector2 mousePosition;
 
 
 		private float xRotation;
@@ -40,20 +39,19 @@ namespace Assignment1.FirstPersonCharacter {
 		private void Awake() {
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-			Application.targetFrameRate = 60;
+			
 		}
 
 
 		private void Update() {
 			lookY = Mathf.Clamp(lookY, -90f, 90f);
-			yRotation = Mathf.Clamp(yRotation, -180f, 180f);
 			characterBody.localEulerAngles = new Vector3(0f, lookX, 0f);
 			mainCamera.transform.localEulerAngles = new Vector3(lookY, 0f, 0f);
 		}
 
 
 		public void OnLook(InputAction.CallbackContext context) {
-			mousePosition = context.ReadValue<Vector2>();
+			Vector2 mousePosition = context.ReadValue<Vector2>();
 			lookX += mousePosition.x * mouseSensitivity * Time.deltaTime;
 			lookY += mousePosition.y * mouseSensitivity * Time.deltaTime;
 		}

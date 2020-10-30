@@ -9,6 +9,7 @@ namespace Assignment1.UserInterface.Controllers {
 	/// <summary>
 	/// A Base class for the <see cref="GameplaySettingsMenuController"/> and the <see cref="VideoSettingsMenuController"/>
 	/// </summary>
+	// TODO: Fix video and gameplay options menu
 	public abstract class SettingsMenuController : MenuController {
 
 		//protected sealed override bool WillSetupButtons => true;

@@ -4,10 +4,14 @@ using InteractionSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Assignment1.InteractionSystem {
+namespace InteractionSystem {
+	
+	/// <summary>
+	/// Allows the player to interact with interactable (<see cref="InteractionSystem.InteractableComponent"/>) enabled <see cref="GameObject"/>s. 
+	/// </summary>
 	public class InteractionComponent : MonoBehaviour {
 		[SerializeField]
-		private float interactLength = 50.0f;
+		private float interactLength = 10.0f;
 
 		private bool canInteract = false;
 
@@ -19,9 +23,7 @@ namespace Assignment1.InteractionSystem {
 
 		private Transform CameraTransform => mainCamera.transform;
 
-		private string InteractKeyName {
-			get { return GetComponent<PlayerInput>()?.currentActionMap["Interact"].controls[0].name.ToUpper(); }
-		}
+		private string InteractKeyName => GetComponent<PlayerInput>()?.currentActionMap["Interact"].controls[0].name.ToUpper();
 
 		// Start is called before the first frame update
 		void Start() {
@@ -36,7 +38,7 @@ namespace Assignment1.InteractionSystem {
 
 		// Update is called once per frame
 		void Update() {
-			if (CheckForInteractableObject()) {
+			if (CheckForAnInteractableObject()) {
 				GameObject hitObject = hitResult.transform.gameObject;
 				Logger.Log($"Hit Object: {hitObject.name}");
 				interactableComponent = hitObject.GetComponent<InteractableComponent>();
@@ -65,7 +67,7 @@ namespace Assignment1.InteractionSystem {
 			mousePosition += context.ReadValue<Vector2>();
 		}
 
-		private bool CheckForInteractableObject() {
+		private bool CheckForAnInteractableObject() {
 			Ray ray = new Ray(CameraTransform.position, CameraTransform.forward);
 
 #if UNITY_EDITOR

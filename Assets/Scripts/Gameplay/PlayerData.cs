@@ -25,6 +25,9 @@ namespace Gameplay {
 			}
 		}
 
+		/// <summary>
+		/// This event is invoked when the <see cref="AmountCollected"/> property is changed. 
+		/// </summary>
 		public event AmountCollectedChanged OnAmountCollectedChanged;
 	}
 }

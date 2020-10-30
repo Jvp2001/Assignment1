@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace Assignment1.UserInterface {
+namespace Assignment1.UserInterface.Controllers {
 	public class OptionsMenuController : MenuController {
 
 		protected override Dictionary<string, Action<Button>> ButtonActions => 

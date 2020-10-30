@@ -1,7 +1,4 @@
 // © 2020 Joshua Petersen. All rights reserved.
-/// <file>
-/// <copyright> © 2020 Joshua Petersen. All rights reserved. </copyright>
-/// </file>
 
 using System;
 using Assignment1;
@@ -10,9 +7,9 @@ using Unity.UIElements.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace UserInterface.Game {
+namespace Assignment1.UserInterface.Game {
 	/// <summary>
-	/// 
+	/// Displays the countdown timer and the number of gems you have and need to collect to win the game. 
 	/// </summary>
 	/// <remarks>
 	/// I violated the naming convention due to HUD being an acronym.

@@ -11,15 +11,21 @@ using Logger = Assignment1.Logger;
 
 
 namespace InteractionSystem {
+	
+	/// <summary>
+	/// Allows a <see cref="GameObject"/> to be interactable
+	/// </summary>
 	public class InteractableComponent : MonoBehaviour {
 
 		[SerializeField]
 		private OnInteractedUnityEvent onInteracted;
 
 		protected OnInteractedUnityEvent OnInteracted => onInteracted;
-
-
-		void Start() {
+		
+		/// <summary>
+		/// Sets the <see cref="GameObject"/> to be on the Interactable Layermask so it can be interacted with.
+		/// </summary>
+		private void Awake() {
 			gameObject.layer = LayerMask.NameToLayer("Interactable");
 		}
 
