@@ -3,6 +3,7 @@
 using System;
 using Assignment1;
 using Assignment1.Gameplay;
+using Assignment1.Pickups;
 using Unity.UIElements.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -23,10 +24,18 @@ namespace Assignment1.UserInterface.Game {
 
 		private Label timerLabel;
 
+		private int TotalNumberOfGemsInScene =>  FindObjectsOfType<Gem>().Length;
+
 		private void Start() {
 			panelRenderer = GetComponent<PanelRenderer>();
 			amountCollected = panelRenderer.visualTree.Query<Label>(name: "AmountCollected");
 			timerLabel = panelRenderer.visualTree.Query<Label>(name: "Timer");
+			GameplayManager.Instance.PlayerData.AmountCollectedChanged += OnAmountCollectedChanged;
+		}
+
+		private void OnAmountCollectedChanged(short value) {
+			amountCollected.text = $"{value}/{TotalNumberOfGemsInScene}";
+
 		}
 
 

@@ -21,13 +21,13 @@ namespace Gameplay {
 			set {
 				amountCollected = value;
 
-				OnAmountCollectedChanged?.Invoke(amountCollected);
+				AmountCollectedChanged?.Invoke(amountCollected);
 			}
 		}
 
 		/// <summary>
 		/// This event is invoked when the <see cref="AmountCollected"/> property is changed. 
 		/// </summary>
-		public event AmountCollectedChanged OnAmountCollectedChanged;
+		public event AmountCollectedChanged AmountCollectedChanged;
 	}
 }

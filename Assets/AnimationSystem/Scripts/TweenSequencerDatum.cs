@@ -31,6 +31,8 @@ namespace Assignment1.AnimationSystem {
 		public Vector3 TargetRotation => tweenDatum.TargetRotation;
 		public bool Join => tweenDatum.Join;
 
+		public bool AnimateLocally => tweenDatum.AnimateLocally;
+		
 		/// <summary>
 		/// Creates a <see cref="Tween"/> based on the of <see cref="TweenType"/>
 		/// </summary>
@@ -40,12 +42,15 @@ namespace Assignment1.AnimationSystem {
 				
 				switch (TweenType) {
 					case TweenType.Move:
-						return 	ObjectToTween.DOMove(objectToTween.transform.position + PositionOffset, Duration);
-						
+							Vector3 distance = objectToTween.transform.position + PositionOffset;
+						if (AnimateLocally) {
+							return ObjectToTween.DOLocalMove(distance, Duration);
+						}
 
-
-
+							return ObjectToTween.DOMove(distance, Duration);
 					case TweenType.Rotate:
+						if(AnimateLocally)
+							return ObjectToTween.DOLocalRotate(TargetRotation, Duration);
 						return ObjectToTween.DORotate(TargetRotation, Duration);
 				}
 

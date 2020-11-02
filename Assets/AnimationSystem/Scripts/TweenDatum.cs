@@ -28,6 +28,10 @@ namespace Assignment1.AnimationSystem {
 		[SerializeField]
 		private bool join = true;
 
+		[SerializeField]
+		private bool animateLocally;
+		
+		
 		/// <summary>
 		/// This is the type of animation you want to apply to a <see cref="GameObject"/>
 		/// </summary>
@@ -55,6 +59,11 @@ namespace Assignment1.AnimationSystem {
 		/// This is only used when <see cref="tweenType"/> is set to Rotate. 
 		/// </summary>
 		public bool Join => join;
+
+		/// <summary>
+		/// Allows the level designer to choose if the animation should be applied locally or globally
+		/// </summary>
+		public bool AnimateLocally => animateLocally;
 	}
 
 }

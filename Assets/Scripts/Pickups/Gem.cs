@@ -8,48 +8,46 @@ using UnityEngine;
 using Logger = Assignment1.Logger;
 
 namespace Assignment1.Pickups {
+
+	[RequireComponent(typeof(MeshRenderer))]
+	[RequireComponent(typeof(SphereCollider))]
 	
-[RequireComponent(typeof(MeshRenderer))]
-[RequireComponent(typeof(SphereCollider))]
 	public class Gem : MonoBehaviour {
 
 		[SerializeField]
 		private AudioClip pickupSound;
 
+		[SerializeField]
+		private bool autoPickup = true;
 		private AudioSource audioSource;
 		private AudioSource currentAudioSource;
-		private MeshRenderer pickupMesh;
-		private SphereCollider sphereCollider;
 		private TweenSequencer tweenSequencer;
 
-
-		public bool CanPickup {
+	
+		public bool IsActive {
 			get => gameObject.activeSelf;
 			set => gameObject.SetActive(value);
 		}
-
 		private void Start() {
-			CanPickup = false;
+			IsActive = !autoPickup;
 		}
-
-		private void OnEnable() {
-			sphereCollider = GetComponent<SphereCollider>();
-			pickupMesh = GetComponent<MeshRenderer>();
-		}
-
-
-		private void OnTriggerEnter(Collider other) {
+		
+		private void OnTriggerStay(Collider other)
+		{
+			if (!autoPickup) {
+				return;
+			}
 			Logger.Log("Collided with player!");
 			Logger.Log($"Other tag: {other.tag}");
 			if (other.CompareTag("Player")) {
 				AudioSource.PlayClipAtPoint(pickupSound, other.transform.position);
 				++GameplayManager.Instance.PlayerData.AmountCollected;
-				Destroy(this);
+				Destroy(gameObject);
 			}
 		}
 
-		public void OnCollected(TweenSequencer sequencer) {
-			gameObject.SetActive(false);
+		public void Collect(GameObject other) {
+			autoPickup = true;
 		}
 	}
 }

@@ -32,7 +32,6 @@ namespace InteractionSystem {
 		public virtual void OnInteractionCompleted(GameObject other) {
 			Logger.Log("Interacted");
 			onInteracted?.Invoke(other);
-			DestroyImmediate(this);
 		}
 
 		[Serializable]

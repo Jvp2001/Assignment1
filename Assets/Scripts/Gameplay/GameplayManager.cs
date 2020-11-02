@@ -8,8 +8,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UserInterface.Game;
-
+using Assignment1.UserInterface.Game;
 namespace Assignment1.Gameplay
 {
     
@@ -70,7 +69,7 @@ namespace Assignment1.Gameplay
         private void Start()
         {
             Timer.OnCountdownFinished += OnCountdownFinished;
-            PlayerData.OnAmountCollectedChanged += CheckForGameCompletion;
+            PlayerData.AmountCollectedChanged += CheckForGameCompletion;
         }
 
         private void OnGUI()
@@ -114,7 +113,7 @@ namespace Assignment1.Gameplay
             yield return new WaitForSeconds(3);
             Cursor.visible = true;
             displayEndOfGameMessage = false;
-            SceneManager.LoadScene("MainLevel");
+            SceneManager.LoadScene("MainMenuScene");
         }
 
         private void OnCountdownFinished()

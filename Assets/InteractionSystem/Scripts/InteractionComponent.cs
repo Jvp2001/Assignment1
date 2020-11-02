@@ -3,6 +3,7 @@
 using InteractionSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Logger = Assignment1.Logger;
 
 namespace InteractionSystem {
 	

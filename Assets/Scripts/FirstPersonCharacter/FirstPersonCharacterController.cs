@@ -1,11 +1,9 @@
 // © 2020 Joshua Petersen. All rights reserved.
 
 using Assignment1.Gameplay;
-using Assignment1.InteractionSystem;
 using InteractionSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 
 namespace Assignment1.FirstPersonCharacter {
