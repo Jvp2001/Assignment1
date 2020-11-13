@@ -8,7 +8,7 @@
                     <ui:Label text="0" name="AmountCollected" style="flex-direction: row-reverse; justify-content: flex-end; align-items: center; flex-grow: 0; position: relative; top: 1.333333px; height: 189.3333px; -unity-text-align: middle-left; padding-left: 0; flex-wrap: wrap; left: 5%; white-space: nowrap; padding-right: 0; width: 62px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Label text="Label" name="Timer" style="flex-direction: row; justify-content: space-between; padding-right: 0; padding-left: 0; margin-right: 0; right: 20%;" />
+            <ui:Label text="00:00" name="Timer" style="flex-direction: row; justify-content: space-between; padding-right: 0; padding-left: 0; margin-right: 0; right: 20%;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

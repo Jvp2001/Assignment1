@@ -4,7 +4,7 @@
         <Style src="/Assets/UserInterface/Styles/MenuStyles/MenuStyles.uss" />
         <ui:Label text="Options" name="Title" />
         <ui:VisualElement name="ButtonsContainer" style="white-space: nowrap; height: 390px; width: 736px;">
-            <ui:Button text="Gameplay" name="Gameplay" class="MenuButton" style="width: 169px;" />
+            <ui:Button text="Gameplay" name="Gameplay" class="MenuButton" />
             <ui:Button text="Video" name="Video" class="MenuButton" style="width: 177px;" />
             <ui:Button text="Back" name="Back" class="MenuButton" style="width: 183px;" />
         </ui:VisualElement>

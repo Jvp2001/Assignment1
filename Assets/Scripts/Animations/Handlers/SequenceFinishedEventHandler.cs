@@ -10,7 +10,7 @@ namespace Assignment1.Animations.Handlers
         public Gem Gem => gem;
 
         public virtual void OnSequencedFinished(TweenSequencer sequencer) {
-            Gem.IsActive = true;
+            Gem.IsTrigger = true;
         }
     }
 }

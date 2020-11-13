@@ -304,12 +304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8302b9857102e44c8c26813e6008537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uxml: {fileID: 9197481963319205126, guid: 95c296dae12790e43b1a1d573cf77859, type: 3}
+  uxml: {fileID: 9197481963319205126, guid: 71fd54cdc63e64d3e90ded2186fcf489, type: 3}
   unityStyleSheet: {fileID: 11400000, guid: d610daef742b54fdda82fd41508f7f2e, type: 2}
   stylesheets: []
   targetTexture: {fileID: 0}
   panelTransform: {fileID: 1369787877}
-  m_EnableLiveUpdate: 1
+  m_EnableLiveUpdate: 0
 --- !u!114 &1369787880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constantPixelSizeScaler:
-    scaleFactor: 1
+    scaleFactor: 2
   constantPhysicalSizeScaler:
     referenceDpi: 96
     fallbackDpi: 96
@@ -331,7 +331,7 @@ MonoBehaviour:
     referenceResolution: {x: 1200, y: 800}
     screenMatchMode: 0
     match: 0
-  scaleMode: 0
+  scaleMode: 2
 --- !u!114 &1369787881
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,3 +22,17 @@
     font-size: 36px;
     min-width: 183px;
 }
+
+ScrollView Button {
+    font-size: 20px;
+    background-color: rgb(86, 84, 84);
+    color: white;
+}
+
+ScrollView {
+    background-color: rgb(105, 105, 105);
+}
+
+.Selected {
+    color: greenyellow;
+}

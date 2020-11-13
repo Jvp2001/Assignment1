@@ -86,7 +86,6 @@
             </e>
           </e>
           <e p="FirstPersonCharacter" t="Include">
-            <e p="CharacterControllerPusher.cs" t="Include" />
             <e p="FirstPersonCameraController.cs" t="Include" />
             <e p="FirstPersonCharacterController.cs" t="Include" />
             <e p="Pusher.cs" t="Include" />
@@ -123,24 +122,16 @@
           </e>
         </e>
         <e p="UserInterface" t="Include">
-          <e p="Elements" t="Include">
-            <e p="VerticalBox.cs" t="Include" />
-          </e>
           <e p="Layouts" t="Include">
             <e p="Menus" t="Include">
               <e p="GameplayOptionsMenu.uxml" t="Include" />
               <e p="MainMenu.uxml" t="Include" />
               <e p="OptionsMenu.uxml" t="Include" />
-              <e p="VideoOptionsMenu 1.uxml" t="Include" />
               <e p="VideoOptionsMenu.uxml" t="Include" />
             </e>
             <e p="PlayerHUD.uxml" t="Include" />
           </e>
           <e p="Styles" t="Include">
-            <e p="CustomElements" t="Include">
-              <e p="OptionRow.uss" t="Include" />
-              <e p="VerticalBox.uss" t="Include" />
-            </e>
             <e p="MenuStyles" t="Include">
               <e p="MainMenuStyles.uss" t="Include" />
               <e p="MenuStyles.uss" t="Include" />

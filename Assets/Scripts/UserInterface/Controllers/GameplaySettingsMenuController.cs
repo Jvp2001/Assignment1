@@ -1,4 +1,5 @@
 // © 2020 Joshua Petersen. All rights reserved.
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,34 +11,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace Assignment1.UserInterface.Controllers {
-	public class GameplaySettingsMenuController : SettingsMenuController {
-		private Difficulty newDifficulty;
+	public class GameplaySettingsMenuController : SettingsMenuController<Difficulty> {
 
-		private Button oldDifficultyButton;
-
-		protected override void Initialise() {
-			ForEach<ScrollView>(listView => {
-				if (listView.name.ToLower() == "resolution") {
-					foreach (Difficulty difficulty in GameplaySettings.Difficulties) {
-						Button button = new Button {text = difficulty.ToString()};
-						button.AddToClassList("ResolutionButton");
-						button.clicked += () => {
-							button.AddToClassList("Selected");
-							if (!(oldDifficultyButton is null) && button != oldDifficultyButton) {
-								oldDifficultyButton?.RemoveFromClassList("Selected");
-							}
-
-							newDifficulty = difficulty;
-							oldDifficultyButton = button;
-						};
-						listView.Add(button);
-					}
-				}
-			});
-		}
-
+		protected override string ScrollViewID => "difficulties";
+		protected override Difficulty[] ScrollViewButtonTypeArray => GameplaySettings.Difficulties;
 		protected override void Apply() {
-			GameplayManager.Instance.GameplaySettings.Difficulty = newDifficulty;
+			Logger.Log("Applying Game Settings!");
+			GameplayManager.Instance.GameplaySettings.Difficulty = NewValue;
+			Logger.Log($"Gameplay Settings: new difficulty: {GameplayManager.Instance.GameplaySettings.Difficulty}");
 		}
 	}
 }

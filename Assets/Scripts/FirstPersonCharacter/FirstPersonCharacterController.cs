@@ -39,7 +39,8 @@ namespace Assignment1.FirstPersonCharacter {
 
 		private void Start() {
 			characterController = GetComponent<CharacterController>();
-			Logger.Log(GameplayManager.Instance.GameplaySettings.Difficulty.ToString());
+			Logger.Log($"Character: new difficulty: {GameplayManager.Instance.GameplaySettings.Difficulty}");
+			GameplayManager.Instance.Timer.Paused = false;
 		}
 
 		private void Update() {
@@ -57,7 +58,6 @@ namespace Assignment1.FirstPersonCharacter {
 		private void MoveCharacter() {
 			Transform currentTransform = transform;
 			Vector3 movement = currentTransform.right * movementX + currentTransform.forward * movementY;
-			Logger.Log($"Movement: {movement}");
 			characterController.Move(movement * (movementSpeed * Time.deltaTime));
 		}
 	}

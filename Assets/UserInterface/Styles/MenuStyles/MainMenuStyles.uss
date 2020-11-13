@@ -20,5 +20,5 @@
 
 #Root #ButtonsContainer > .MenuButton {
     font-size: 36px;
-    min-width: 183px;
+    min-width: 80%;
 }

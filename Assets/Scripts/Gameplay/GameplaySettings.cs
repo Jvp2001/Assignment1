@@ -16,15 +16,15 @@ namespace Assignment1.Gameplay
         
         public static readonly Difficulty[] Difficulties = {Difficulty.Easy, Difficulty.Normal, Difficulty.Hard};
 
-        [SerializeField] private TimerOptions easyTime = new TimerOptions(2,30);
-        [SerializeField] private TimerOptions normalTime = new TimerOptions(1, 45);
-        [SerializeField] private TimerOptions hardTime = new TimerOptions(1,15);
+        [SerializeField] private TimerOptions easyTime = new TimerOptions(1,0);
+        [SerializeField] private TimerOptions normalTime = new TimerOptions(0, 45 );
+        [SerializeField] private TimerOptions hardTime = new TimerOptions(0,30);
 
         public GameplaySettings()
         {
         }
 
-        public Difficulty Difficulty { get; set; } = Difficulty.Normal;
+        public Difficulty Difficulty { get; set; }
 
 
         public TimerOptions EasyTime => easyTime;

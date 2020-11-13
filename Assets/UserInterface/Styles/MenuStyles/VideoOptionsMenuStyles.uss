@@ -18,19 +18,3 @@
     min-height: 30%;
 }
 
-Resolution #Root #ButtonsContainer > .MenuButton {
-    font-size: 36px;
-    min-width: 183px;
-}
-
-.Selected {
-    color: greenyellow;
-}
-
-.ResolutionButton {
-    background-color: rgba(1, 0, 0, 0);
-}
-
-.NewOptionsRow {
-    min-width: auto;
-}

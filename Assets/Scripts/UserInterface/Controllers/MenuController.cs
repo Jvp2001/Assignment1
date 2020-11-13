@@ -1,4 +1,5 @@
 // © 2020 Joshua Petersen. All rights reserved.
+
 using System;
 using System.Collections.Generic;
 using Unity.UIElements.Runtime;
@@ -6,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
+using Random = System.Random;
 
 namespace Assignment1.UserInterface {
 	/// <summary>
@@ -14,8 +16,8 @@ namespace Assignment1.UserInterface {
 	/// </para>
 	/// </summary>
 	[RequireComponent(typeof(PanelRenderer))]
-	
 	public abstract class MenuController : MonoBehaviour {
+		private PanelRenderer panelRenderer;
 
 		/// <summary>
 		/// This property can be overriden by a child class to tell the <see cref="MenuController"/> parent class that it wants to handle when
@@ -30,7 +32,7 @@ namespace Assignment1.UserInterface {
 		/// This property will get <see cref="Unity.UIElements.Runtime.PanelRenderer"/> component from its game object 
 		/// </summary>
 		/// 
-		protected PanelRenderer PanelRenderer => GetComponent<PanelRenderer>();
+		protected PanelRenderer PanelRenderer => panelRenderer;
 
 		/// <summary>
 		///<para>
@@ -42,6 +44,7 @@ namespace Assignment1.UserInterface {
 
 		private void Awake() {
 			SceneManager.sceneLoaded += OnSceneLoaded;
+			panelRenderer = GetComponent<PanelRenderer>();
 		}
 
 
@@ -81,7 +84,18 @@ namespace Assignment1.UserInterface {
 		}
 
 		private void SetupButtonActions() {
-			ForEach<Button>(button => { button.clicked += () => ButtonActions[button.name.ToLower()](button); });
+			ForEach<Button>(button => {
+				button.clicked += () => {
+					string key = button.name.ToLower();
+					if (!ButtonActions.ContainsKey(key))
+					{
+						Logger.LogError($"Cannot find key: ${key} in ButtonActions.");
+						return;
+
+					}
+					ButtonActions[key](button);
+				};
+			});
 		}
 	}
 }

@@ -24,17 +24,20 @@ namespace Assignment1.UserInterface.Game {
 
 		private Label timerLabel;
 
-		private int TotalNumberOfGemsInScene =>  FindObjectsOfType<Gem>().Length;
-
+		private string AmountCollectedText => $"{GameplayManager.Instance.PlayerData.AmountCollected}/{GameplayManager.Instance.NumberOfGemsToWin}";
 		private void Start() {
 			panelRenderer = GetComponent<PanelRenderer>();
 			amountCollected = panelRenderer.visualTree.Query<Label>(name: "AmountCollected");
+			amountCollected.text = AmountCollectedText;
 			timerLabel = panelRenderer.visualTree.Query<Label>(name: "Timer");
 			GameplayManager.Instance.PlayerData.AmountCollectedChanged += OnAmountCollectedChanged;
+			Logger.Log($"{GameplayManager.Instance.GameplaySettings.Difficulty}");
+
+
 		}
 
 		private void OnAmountCollectedChanged(short value) {
-			amountCollected.text = $"{value}/{TotalNumberOfGemsInScene}";
+			amountCollected.text = AmountCollectedText;
 
 		}
 
@@ -42,6 +45,7 @@ namespace Assignment1.UserInterface.Game {
 		// Update is called once per frame
 		void Update() {
 			timerLabel.text = GameplayManager.Instance.Timer.ToString();
+			
 		}
 	}
 }

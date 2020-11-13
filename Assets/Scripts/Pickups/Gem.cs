@@ -1,45 +1,40 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Assignment1.AnimationSystem;
-using Assignment1.Gameplay;
-using UnityEditor.SceneManagement;
+﻿using Assignment1.Gameplay;
 using UnityEngine;
-using Logger = Assignment1.Logger;
 
 namespace Assignment1.Pickups {
 
 	[RequireComponent(typeof(MeshRenderer))]
 	[RequireComponent(typeof(SphereCollider))]
-	
 	public class Gem : MonoBehaviour {
 
 		[SerializeField]
 		private AudioClip pickupSound;
 
 		[SerializeField]
-		private bool autoPickup = true;
-		private AudioSource audioSource;
-		private AudioSource currentAudioSource;
-		private TweenSequencer tweenSequencer;
+		private bool autoPickup;
+		
+		private SphereCollider sphereCollider;
+
+
+		public bool IsTrigger {
+			get => sphereCollider.isTrigger ;
+			set => sphereCollider.isTrigger = value;
+		}
+
+		private void Awake() {
+			sphereCollider = GetComponent<SphereCollider>();
+			sphereCollider.isTrigger = autoPickup;
+		}
 
 	
-		public bool IsActive {
-			get => gameObject.activeSelf;
-			set => gameObject.SetActive(value);
-		}
-		private void Start() {
-			IsActive = !autoPickup;
-		}
-		
-		private void OnTriggerStay(Collider other)
-		{
+		private void OnTriggerStay(Collider other) {
 			if (!autoPickup) {
 				return;
 			}
+
 			Logger.Log("Collided with player!");
 			Logger.Log($"Other tag: {other.tag}");
-			if (other.CompareTag("Player")) {
+			if (other.CompareTag("Player") && autoPickup) {
 				AudioSource.PlayClipAtPoint(pickupSound, other.transform.position);
 				++GameplayManager.Instance.PlayerData.AmountCollected;
 				Destroy(gameObject);

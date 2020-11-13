@@ -29,13 +29,7 @@ namespace Assignment1.FirstPersonCharacter {
 
 		private float lookX;
 		private float lookY;
-
-
-		private float xRotation;
-
-		private float
-			yRotation;
-
+		
 		private void Awake() {
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;

@@ -34,7 +34,7 @@ namespace InteractionSystem {
 				return;
 			}
 
-			Logger.Log($"Found camera: {mainCamera.name}");
+			
 		}
 
 		// Update is called once per frame
@@ -80,7 +80,7 @@ namespace InteractionSystem {
 		}
 
 		public void OnInteraction(InputAction.CallbackContext context) {
-			if (hitResult.collider is null) return;
+			if (!canInteract) return;
 			canInteract = false;
 			hitResult.collider.gameObject.layer = LayerMask.NameToLayer("Default");
 			interactableComponent?.OnInteractionCompleted(gameObject);
